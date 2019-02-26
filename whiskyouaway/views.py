@@ -11,6 +11,32 @@ from datetime import datetime
 # Create your views here.
 
 def index(request):
-	context_dict = {'boldmessage': "Whisk You Away test!"}
-	response = render(request, 'whiskyouaway/home.html', context=context_dict)
+	response = render(request, 'whiskyouaway/home.html')
 	return response
+
+def about(request):
+	return render(request, 'whiskyouaway/about.html')
+
+def categories(request):
+	return render(request, 'whiskyouaway/categories.html')
+
+def contact_us(request):
+	return render(request, 'whiskyouaway/contact_us.html')
+
+def register(request):
+	return render(request, 'whiskyouaway/register.html')
+
+def user_login(request):
+	return render(request, 'whiskyouaway/login.html')
+
+def restricted(request):
+	return render(request, 'whiskyouaway/restricted.html')
+
+def user_logout(request):
+	return render(request, 'whiskyouaway/logout.html')
+
+def meet_up(request):
+	return render(request, 'whiskyouaway/meet_up.html')
+
+def view_attractions(request):
+	return render(request, 'whiskyouaway/view_attractions.html')
