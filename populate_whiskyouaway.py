@@ -15,7 +15,45 @@ def populate():
 	{"title": "Tartan Heart Festival",
 	"url": "https://tartanheartfestival.co.uk/"} ]
 
-	cats = {"Music": {"events": music_pages}, } 
+	animal_pages = [
+	{"title": "Dog Jog Glasgow",
+	"url": "http://www.whatsonglasgow.co.uk/events/pet/"},
+	{"title": "The Dog Lover Show",
+	"url": "http://www.whatsonglasgow.co.uk/events/pet/"},
+	{"title": "Edinburgh Dog Show",
+	"url": "http://www.whatsonglasgow.co.uk/events/pet/"},
+	{"title": "Edinburgh Zoo", 
+	"url": "https://www.edinburghzoo.org.uk/"},
+	{"title": "Deep Sea World",
+	"url": "https://www.deepseaworld.com/"},
+	{"title": "Blair Drummond",
+	"url": "https://www.blairdrummond.com/"},
+	{"title": "Highland Wildlife Park",
+	"url": "http://www.highlandwildlifepark.org.uk/"},
+	{"title": "Chihuahua Cafe",
+	"url": "https://edinburghchihuahuacafe.co.uk/"},
+	{"title": "Maison de Moggy - Scotland's First Cat Cafe",
+	"url": "https://www.maisondemoggy.com/"}
+	]
+
+	nightlife_pages = [
+	{"title": "Blue Dog Cocktail Bar", 
+	"url": "https://www.bluedogglasgow.co.uk/"},
+	{"title": "Tingle Shooter Bar",
+	"url": "https://www.tinglebar.co.uk/"},
+	{"title": "Firewater",
+	"url": "https://en-gb.facebook.com/firewaterglasgowofficial/"},
+	{"title": "Cathouse",
+	"url": "https://cathouse.co.uk/"},
+	{"title": "Frankenstein",
+	"url": "https://www.frankensteinedinburgh.co.uk/"},
+	{"title": "Hive",
+	"url": "https://clubhive.co.uk/"}]
+
+
+	cats = {"Music": {"events": music_pages},
+	"Animals": {"events": animal_pages},
+	'Nightlife': {"events": nightlife_pages} } 
 
 	for cat, cat_data in cats.items():
 		c = add_cat(cat)
