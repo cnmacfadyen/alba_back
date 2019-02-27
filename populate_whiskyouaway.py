@@ -7,14 +7,6 @@ from whiskyouaway.models import Category, Event, CategoryContainer
 
 def populate():
 
-	music_pages = [
-	{"title": "Trnsmt Festival",
-	"url": "https://trnsmtfest.com/"},
-	{"title": "King Tut's Wah Wah Hut",
-	"url": "https://www.kingtuts.co.uk/"},
-	{"title": "Tartan Heart Festival",
-	"url": "https://tartanheartfestival.co.uk/"} ]
-
 	animal_pages = [
 	{"title": "Dog Jog Glasgow",
 	"url": "http://www.whatsonglasgow.co.uk/events/pet/"},
@@ -134,13 +126,60 @@ def populate():
 	"url": "http://archive.angus.gov.uk/leisureaa/rangerservice/monikie.htm"}
 	]
 
+	music_pages = [
+	{"title": "Trnsmt Festival",
+	"url": "https://trnsmtfest.com/"},
+	{"title": "King Tut's Wah Wah Hut",
+	"url": "https://www.kingtuts.co.uk/"},
+	{"title": "Belladrum Tartan Heart Festival",
+	"url": "https://tartanheartfestival.co.uk/"},
+	{"title": "The Islay Festival of Music and Malt",
+	"url": "https://www.islayfestival.com/"},
+	{"title": "Summer Nights at The Bandstand",
+	"url": "https://www.ticketmaster.co.uk/Summer-Nights-tickets/artist/1992315"},
+	{"title": "Stramash Live Music Bar",
+	"url": "https://stramashedinburgh.com/"},
+	{"title": "Burnsfest! 2019",
+	"url": "http://www.burnsfestival.com/burnsfest/"},
+	{"title": "The Barrowland Ballroom",
+	"url": "http://barrowland-ballroom.co.uk/"},
+	{"title": "Orkney Folk Festival",
+	"url": "https://www.orkneyfolkfestival.com/"},
+	{"title": "Crofter’s Music Bar",
+	"url": "https://croftersmusicbar.com/"}]
+
+
+	food_pages = [
+	{"title": "The Gin to My Tonic Show",
+	"url": "https://thegintomytonic.com/event/the-gin-to-my-tonic-show-glasgow-15th-17th-march-2019/"},
+	{"title": "Scottish Vegan Festival",
+	"url": "https://www.vegfest.co.uk/event/scottish-vegan-festival-2/"},
+	{"title": "Tennent’s Wellpark Brewery",
+	"url": "http://www.tennentstours.com/"},
+	{"title": "Foodies’ Festival",
+	"url": "http://foodiesfestival.com/"},
+	{"title": "Spirit of Speyside Whisky Festival",
+	"url": "https://www.spiritofspeyside.com/"},
+	{"title": "Tarbert Seafood Festival",
+	"url": "http://www.tarbertfestivals.co.uk/festival-seafood.php"},
+	{"title": "Penicuik Market",
+	"url": "https://www.visitscotland.com/info/events/penicuik-market-p1598541"},
+	{"title": "Autumn Fungi & Wild Food Foraging Walk",
+	"url": "http://www.gallowaywildfoods.com/product/autumn-fungi-wild-food-foraging-walk-dumfries/"},
+	{"title": "Highland Haggis Festival",
+	"url": "https://www.highlandhaggisfest.co.uk/"},
+	{"title": "Highland Food & Drink Festival",
+	"url": "https://www.eventbrite.co.uk/e/highland-food-drink-festival-tickets-53133201837"}
+	]
+
 	cats = {"Music": {"events": music_pages},
 	"Animals": {"events": animal_pages},
 	'Nightlife': {"events": nightlife_pages},
 	"Sport":{"events": sport_pages},
 	"Outdoors":{"events": outdoor_pages}, 
 	"History": {"events": history_pages}, 
-	"Family": {"events": family_pages}} 
+	"Family": {"events": family_pages},
+	"Food and Drink": {"events": food_pages}} 
 
 	for cat, cat_data in cats.items():
 		c = add_cat(cat)
