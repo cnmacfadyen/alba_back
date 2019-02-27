@@ -50,10 +50,97 @@ def populate():
 	{"title": "Hive",
 	"url": "https://clubhive.co.uk/"}]
 
+	sport_pages = [
+	{"title": "European Athletics Indoor Championships, 2019",
+	"url": "https://glasgow2019athletics.com"},
+	{"title": "Guinness Pro14 Final, 2019",
+	"url": "https://www.pro14rugby.org/final/"},
+	{"title": "Blair Castle International Horse Trials",
+	"url": "https://www.blairhorsetrials.co.uk"},
+	{"title": "Solheim Cup, 2019",
+	"url": "https://solheimcup2019.com"},
+	{"title": "Scottish Premiership",
+	"url": "https://spfl.co.uk"},
+	{"title": "Loch Lomond Water Ski Club",
+	"url": "http://www.lochlomondwaterskiclub.co.uk"},
+	{"title": "Scotland's Boat Show",
+	"url": "http://www.scotlandsboatshow.co.uk"},
+	{"title": "British Swimming Championships",
+	"url": "https://www.britishswimming.org/events-and-tickets/british-swimming-championships-2019/"},
+	{"title": "Premier League of Darts",
+	"url": "https://www.pdc.tv/tournament/unibet-premier-league"},
+	{"title": "Cycling Track World Cup",
+	"url": "http://www.trackworldcup.co.uk"}
+	]
+
+	outdoor_pages = [
+	{"title": "Military Tattoo",
+	"url": "www.edintattoo.co.uk"},
+	{"title": "GlasGLOW",
+	"url": "http://www.whatsonglasgow.co.uk/event/064051-glasglow/"},
+	{"title": "Highland Games",
+	"url": "http://www.shga.co.uk"},
+	{"title": "Beltane Fire Festival",
+	"url": "www.beltane.org"},
+	{"title": "Scotland’s Big Nature Festival",
+	"url": "www.ruralprojects.co.uk"},
+	{"title": "Bard in the Botanics",
+	"url": "https://www.bardinthebotanics.co.uk"},
+	{"title": "Outdoor Survival Courses",
+	"url": "https://www.wildwoodbushcraft.com/scotland-courses?gclid=EAIaIQobChMIpKnBs-rU4AIVROR3Ch07qAOrEAAYAiAAEgK9Y_D_BwE"},
+	{"title": "West Highland Way",
+	"url": "https://www.westhighlandway.org"},
+	{"title": "Quadmania",
+	"url": "http://www.quadmaniascotland.co.uk"},
+	{"title": "Outdoor Explore",
+	"url": "https://www.outdoorexplore.co.uk"}
+	]
+
+	history_pages = [
+	{"title": "Inveraray Castle",
+	"url": "https://www.zigzagonearth.com/inveraray-castle-scotland/"},
+	{"title": "Dunrobin Castle",
+	"url": "https://www.zigzagonearth.com/dunrobin-castle-scotland/"},
+	{"title": "Edinburgh Castle",
+	"url": "https://www.zigzagonearth.com/visit-edinburgh-castle-scotland/"},
+	{"title": "Stirling Castle",
+	"url": "https://www.stirlingcastle.scot"},
+	{"title": "Eilean Donan Castle",
+	"url": "https://www.zigzagonearth.com/eilean-donan-castle-scotland/"},
+	{"title": "Kilchurn Castle",
+	"url": "https://www.zigzagonearth.com/kilchurn-castle-loch-awe-scotland/"},
+	{"title": "The Writers’ Museum ",
+	"url": "https://www.edinburghmuseums.org.uk/venue/writers-museum"},
+	{"title": "Kelvingrove Art Gallery and Museum",
+	"url": "https://www.glasgowlife.org.uk/museums/venues/kelvingrove-art-gallery-and-museum"},
+	{"title": "National Museum of Scotland",
+	"url": "https://www.nms.ac.uk/national-museum-of-scotland/"},
+	{"title": "V&A Dundee - Scotland’s first design museum ",
+	"url": "https://www.vam.ac.uk/dundee"},
+	{"title": "Riverside Museum, Glasgow ",
+	"url": "https://www.glasgowlife.org.uk/museums/venues/riverside-museum)"}
+	]
+
+	family_pages = [
+	{"title": "The Speyside Way, Cairngorms National Park",
+	"url": "https://cairngorms.co.uk"},
+	{"title": "The Rob Roy Loop, Loch Lomond & The Trossachs National Park",
+	"url": "https://www.lochlomond-trossachs.org/things-to-do/cycling/cycling-routes/rob-roy-loop/"},
+	{"title": "Kelburn Castle near Largs, Ayrshire & Arran",
+	"url": "https://www.kelburnestate.com"},
+	{"title": "Sea Kayak Oban",
+	"url": "https://www.seakayakoban.com"},
+	{"title": "Monikie Country Park",
+	"url": "http://archive.angus.gov.uk/leisureaa/rangerservice/monikie.htm"}
+	]
 
 	cats = {"Music": {"events": music_pages},
 	"Animals": {"events": animal_pages},
-	'Nightlife': {"events": nightlife_pages} } 
+	'Nightlife': {"events": nightlife_pages},
+	"Sport":{"events": sport_pages},
+	"Outdoors":{"events": outdoor_pages}, 
+	"History": {"events": history_pages}, 
+	"Family": {"events": family_pages}} 
 
 	for cat, cat_data in cats.items():
 		c = add_cat(cat)
