@@ -21,9 +21,7 @@ def categories(request):
 	return render(request, 'whiskyouaway/categories.html', {})
 
 def contact_us(request):
-	context_dict = {}
-	response = render(request, 'whiskyouaway/contact_us.html', context_dict)
-	return render
+	return render(request, 'whiskyouaway/contact_us.html', {})
 
 def profile(request):
 	return render(request, 'whiskyouaway/profile.html', {})
