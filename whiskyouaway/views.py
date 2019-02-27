@@ -23,6 +23,9 @@ def categories(request):
 def contact_us(request):
 	return render(request, 'whiskyouaway/contact_us.html')
 
+def profile(request):
+	return render(request, 'whiskyouaway/profile.html')
+
 def register(request):
 	return render(request, 'whiskyouaway/register.html')
 
