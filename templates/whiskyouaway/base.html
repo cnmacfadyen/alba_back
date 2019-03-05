@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>
+            {% block title_block %}
+            <strong>WhiskYouAway</strong> 
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        {% block logo_block %}      
+            <img src="{% static "images/logo.jpg" %}"
+            alt="Whisk You Away" />
+        {% endblock %}
+        <hr />
+        <div>
+            <ul>
+            {% block body_block %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="{% url 'meet_up' %}">Organise Meet Ups</a></li> 
+                <li><a href="{% url 'login' %}">Sign In</a></li>
+                <li><a href="{% url 'register' %}">Sign Up</a></li>
+                <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'view_attractions' %}">View Attractions</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+            {% endblock %}
+            </ul>
+        </div>
+        <hr />
+        <div>
+            <ul>
+            {% block sidebar_block %}
+				<li><a href="{% url 'profile' %}">Profile</a></li>
+				<li><a href="{% url 'logout' %}">Logout</a></li>
+				<li><a href="{% url 'meet_up' %}">Organise Meet Ups</a></li> 
+				<li><a href="{% url 'login' %}">Sign In</a></li>
+				<li><a href="{% url 'register' %}">Sign Up</a></li>
+				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+				<li><a href="{% url 'categories' %}">Categories</a></li>
+				<li><a href="{% url 'view_attractions' %}">View Attractions</a></li>
+				<li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
+            {% endblock %}
+            </ul>
+        </div>
+    </body>
+</html>
