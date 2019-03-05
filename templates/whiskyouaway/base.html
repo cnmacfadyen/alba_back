@@ -5,14 +5,18 @@
     <head>
         <title>
             {% block title_block %}
-            <strong>WhiskYouAway</strong> 
+                Whisk You Away
             {% endblock %}
         </title>
     </head>
     <body>
-        {% block logo_block %}      
+        {% block logo_block %}   
+        <script> function GoToHomePage()
+                {
+                  window.location = '/';   
+                }</script> 
             <img src="{% static "images/logo.jpg" %}"
-            alt="Whisk You Away" />
+            alt="Whisk You Away" onclick="GoToHomePage()"/>
         {% endblock %}
         <hr />
         <div>
