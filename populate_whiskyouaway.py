@@ -192,10 +192,9 @@ def populate():
 		for e in Event.objects.filter(category=c):
 			print("- {0} - {1}".format(str(c), str(e)))
 
-def add_event(cat, title, url, views=0):
+def add_event(cat, title, url):
 	e = Event.objects.get_or_create(category=cat, title=title)[0]
 	e.url=url
-	e.views=views
 	e.save()
 	return e
 

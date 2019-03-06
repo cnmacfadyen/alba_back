@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from whiskyouaway.models import Category,UserProfile, Review
+from whiskyouaway.models import Category, Event, UserProfile, Review
 from whiskyouaway.forms import UserForm, UserProfileForm, Review
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -48,6 +48,9 @@ def view_attractions(request):
 def reviews(request):
 	return render(request, 'whiskyouaway/reviews.html', {})
 
+def get_category_list(cat=None):
+	return {'cats': Category.objects.all(), 'act_cat': cat}
+
 def show_category(request, category_name_slug):	
 	context_dict = {}
 
@@ -59,7 +62,7 @@ def show_category(request, category_name_slug):
 	except Category.DoesNotExist:
 		context_dict['category'] = None
 		context_dict['events'] = None
-	return render(request, 'whiskyouaway/category.html', context_dict)
+	return render(request, 'whiskyouaway/categories.html', context_dict)
 
 def register(request):
 	registered = False
