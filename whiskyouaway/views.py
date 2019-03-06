@@ -111,3 +111,174 @@ def user_login(request):
 def user_logout(request):
 	logout(request)
 	return HttpResponseRedirect(reverse('index'))
+
+# animal pages
+
+def dog_jog(request):
+	return render(request, 'whiskyouaway/dog_jog.html', {})
+
+def dog_lover(request):
+	return render(request, 'whiskyouaway/dog_lover.html', {})
+
+def edinburgh_dogs(request):
+	return render(request, 'whiskyouaway/edinburgh_dogs.html', {})
+
+def edinburgh_zoo(request):
+	return render(request, 'whiskyouaway/edinburgh_zoo.html', {})
+
+def deep_sea_world(request):
+	return render(request, 'whiskyouaway/deep_sea_world.html', {})
+
+def blair_drummond(request):
+	return render(request, 'whiskyouaway/blair_drummond.html', {})
+
+def highland_wildlife(request):
+	return render(request, 'whiskyouaway/highland_wildlife.html', {})
+
+def chihuahua_cafe(request):
+	return render(request, 'whiskyouaway/chihuahua_cafe.html', {})
+
+def cat_cafe(request):
+	return render(request, 'whiskyouaway/cat_cafe.html', {})
+
+# nightlife pages
+
+def blue_dog(request):
+	return render(request, 'whiskyouaway/blue_dog.html', {})
+
+def tingle(request):
+	return render(request, 'whiskyouaway/tingle.html', {})
+
+def firewater(request):
+	return render(request, 'whiskyouaway/firewater.html', {})
+
+def cathouse(request):
+	return render(request, 'whiskyouaway/cathouse.html', {})
+
+def frankenstein(request):
+	return render(request, 'whiskyouaway/frankenstein.html', {})
+
+def hive(request):
+	return render(request, 'whiskyouaway/hive.html', {})
+
+
+# sport pages
+
+def indoor_athletics(request):
+	return render(request, 'whiskyouaway/indoor_athetics.html', {})
+
+def pro14_final(request):
+	return render(request, 'whiskyouaway/pro14_final.html', {})
+
+def horse_trials(request):
+	return render(request, 'whiskyouaway/horse_trials.html', {})
+
+def solheim_cup(request):
+	return render(request, 'whiskyouaway/solheim_cup.html', {})
+
+def spfl(request):
+	return render(request, 'whiskyouaway/spfl.html', {})
+
+def water_ski(request):
+	return render(request, 'whiskyouaway/water_ski.html', {})
+
+def boat_show(request):
+	return render(request, 'whiskyouaway/boat_show.html', {})
+
+def british_swimming(request):
+	return render(request, 'whiskyouaway/british_swimming.html', {})
+
+def darts(request):
+	return render(request, 'whiskyouaway/darts.html', {})
+
+def cycling_world_cup(request):
+	return render(request, 'whiskyouaway/cycling_world_cup.html', {})
+
+# outdoor pages
+
+def tattoo(request):
+	return render(request, 'whiskyouaway/tattoo.html', {})
+
+def glasglow(request):
+	return render(request, 'whiskyouaway/glasglow.html', {})
+
+def highland_games(request):
+	return render(request, 'whiskyouaway/highland_games.html', {})
+
+def fire_festival(request):
+	return render(request, 'whiskyouaway/fire_festival.html', {})
+
+def nature_festival(request):
+	return render(request, 'whiskyouaway/nature_festival.html', {})
+
+def bard_botanics(request):
+	return render(request, 'whiskyouaway/bard_botanics.html', {})
+
+def outdoor_survival(request):
+	return render(request, 'whiskyouaway/outdoor_survival.html', {})
+
+def west_highland_way(request):
+	return render(request, 'whiskyouaway/west_highland_way.html', {})
+
+def quadmania(request):
+	return render(request, 'whiskyouaway/quadmania.html', {})
+
+def outdoor_explore(request):
+	return render(request, 'whiskyouaway/outdoor_explore.html', {})
+
+# history pages
+
+def inverary(request):
+	return render(request, 'whiskyouaway/InveraryCastle.html', {})
+
+def dunrobin(request):
+	return render(request, 'whiskyouaway/DunrobinCastle.html', {})
+
+def edinburgh(request):
+	return render(request, 'whiskyouaway/EdinburghCastle.html', {})
+
+def stirling(request):
+	return render(request, 'whiskyouaway/StirlingCastle.html', {})
+
+def eilean(request):
+	return render(request, 'whiskyouaway/EileanDonanCastle.html', {})
+
+def kilchurn(request):
+	return render(request, 'whiskyouaway/KilchurnCastle.html', {})
+
+def writers(request):
+	return render(request, 'whiskyouaway/WritersMuseum.html', {})
+
+def kelvingrove(request):
+	return render(request, 'whiskyouaway/kelvingroveMuseum.html', {})
+
+def national_museums(request):
+	return render(request, 'whiskyouaway/NationalMuseums.html', {})
+
+def vadundee(request):
+	return render(request, 'whiskyouaway/VADundee.html', {})
+
+def riverside(request):
+	return render(request, 'whiskyouaway/RiversideMuseum.html', {})
+
+# family pages
+
+def speyside(request):
+	return render(request, 'whiskyouaway/SpeysideWay.html', {})
+
+def robroy(request):
+	return render(request, 'whiskyouaway/RobRoyLoop.html', {})
+
+def kelburn(request):
+	return render(request, 'whiskyouaway/KelburnCastle.html', {})
+
+def kayak(request):
+	return render(request, 'whiskyouaway/ObanKayak.html', {})
+
+def monikie(request):
+	return render(request, 'whiskyouaway/MonikiePark.html', {})
+
+# music pages
+
+# food pages
+	
