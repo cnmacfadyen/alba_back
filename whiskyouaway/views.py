@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-# from whiskyouaway.models import Category, Page, UserProfile
-# from whiskyouaway.forms import CategoryForm, PageForm, UserForm, UserProfileForm
+from whiskyouaway.models import Category,UserProfile, Review
+from whiskyouaway.forms import UserForm, UserProfileForm, Review
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
