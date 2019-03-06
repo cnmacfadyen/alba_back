@@ -11,4 +11,18 @@
 	<h2>What are you interested in?</h2>
 	<!-- Need to create something so that the categories are ordered by date -->
 </div>
+
+<div>
+	{% if categories %}
+			<ul>
+				{% for category in categories %}
+				<li>
+				<a href="{% url 'show_category' category.slug %}">{{ category.name }}</a>
+				</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+				<strong>There are no categories present.</strong>
+			{% endif %}
+</div>
 {% endblock %}

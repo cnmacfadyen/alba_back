@@ -48,6 +48,18 @@ def view_attractions(request):
 def reviews(request):
 	return render(request, 'whiskyouaway/reviews.html', {})
 
+def show_category(request, category_name_slug):	
+	context_dict = {}
+
+	try:
+		category = Category.objects.get(slug=category_name_slug)
+		events = Event.objects.filter(category=category)
+		context_dict['events'] = events
+		context_dict['category'] = category
+	except Category.DoesNotExist:
+		context_dict['category'] = None
+		context_dict['events'] = None
+	return render(request, 'whiskyouaway/category.html', context_dict)
 
 def register(request):
 	registered = False
