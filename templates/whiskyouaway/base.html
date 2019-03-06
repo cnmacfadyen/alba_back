@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load whiskyouaway_template_tags %}
 {% load staticfiles %}
 
 <html>
@@ -52,5 +53,10 @@
             {% endblock %}
             </ul>
         </div>
+        <div>
+            {% block category_block %}
+                {% get_category_list %}
+            {% endblock %}
+        </div>    
     </body>
 </html>
