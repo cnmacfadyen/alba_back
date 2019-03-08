@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Frankenstein
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Frankenstein</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}frankenstein.jpg" alt="Frankenstein"/>
+</div>
+<div>
+	For a fun and friendly pub in Edinburgh, try Frankenstein. Situated in  the heart of the Old Town, there's lots of food and drinks to try
+</div>
+<div> 
+	<a href="https://www.frankensteinedinburgh.co.uk/">For larger bookings, click here!</a>
+</div>
+{% endblock %}
