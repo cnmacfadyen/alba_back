@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %}
+
+{% block title_block %}
+    	Blair Drummond
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Blair Drummond Safari Park</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}blair_drummond.png" alt="Blair Drummond Safari Park"/>
+</div>
+<div>
+	A safari park in Scotland! If exotic and rare animals is your thing, Blair Drummond Safari Park is the place to be. Spend the day here and you'll get the chance to meet Scotland's only giraffes and take a boat trip to Chimp Island. Find out more at the link below.
+</div>
+<div> 
+	<a href="https://www.blairdrummond.com/">For more information, click here!</a>
+</div>
+{% endblock %}

@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Edinburgh Dog Show
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Edinburgh Dog Show</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}edinburgh_dogs.jpg" alt="Edinburgh Dog Show"/>
+</div>
+<div>
+	The Scottish Kennel Club Dog Show is the place to go if you want to learn more about dogs. Bring your dog along so they can sample some of the treats on offer and cheer on the other dogs competing for Best in Show.
+</div>
+<div> 
+	<a href=https://www.royalhighlandcentre.co.uk/events/scottish-kennel-club-dog-show/>Click here to learn more!</a>
+</div>
+{% endblock %}

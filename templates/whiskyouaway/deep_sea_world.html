@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Deep Sea World
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Dog Jog</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}deep_sea_world.jpg" alt="Deep Sea World"/>
+</div>
+<div>
+	Fascinated by marine life? Go and visit Deep Sea World, Scotland's National Aquarium, to learn more about animals from the oceans. Or if you're brave enough, and old enough, you can try diving with sharks!
+</div>
+<div> 
+	<a href="https://www.deepseaworld.com/">For more information, click here!</a>
+</div>
+{% endblock %}

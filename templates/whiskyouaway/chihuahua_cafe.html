@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %}
+
+{% block title_block %}
+    	Chihuahua Cafe
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Chihuahua Café</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}chihuahua_cafe.png" alt="Edinburgh's Chihuahua Café"/>
+</div>
+<div>
+	Book a time to visit the Chihuahua Cafe and sample some food in the company of Chihuahuas!
+</div>
+<div> 
+	<a href="https://edinburghchihuahuacafe.co.uk/">For more information, click here!</a>
+</div>
+{% endblock %}

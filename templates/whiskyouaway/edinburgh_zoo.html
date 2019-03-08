@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Edinburgh Zoo
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Dog Jog</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}edinburgh_zoo.jpg" alt="Edinburgh Zoo"/>
+</div>
+<div>
+	For an unforgettable day out, give Edinburgh Zoo a try. With world-class attractions and lots of different animals to see, any animal lover is sure to have a ball.
+</div>
+<div> 
+	<a href="https://www.edinburghzoo.org.uk/">For more information, click here!</a>
+</div>
+{% endblock %}
