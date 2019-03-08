@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Firewater
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Firewater</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}firewater.jpg" alt="Firewater"/>
+</div>
+<div>
+	For a lively night in Glasgow, why not give Firewater a try? With good music and a lots of events on offer, there's something for everyone.
+</div>
+<div> 
+	<a href="https://en-gb.facebook.com/firewaterglasgowofficial/">To learn more, click here!</a>
+</div>
+{% endblock %}

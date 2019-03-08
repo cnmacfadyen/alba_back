@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Hive
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Hive</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}hive.jpg" alt="Hive"/>
+</div>
+<div>
+	For a student-orientated night out in Edinburgh, the Hive is the place to be. To book a VIP table, use the link below.
+</div>
+<div> 
+	<a href="https://clubhive.co.uk/">Click here!</a>
+</div>
+{% endblock %}
