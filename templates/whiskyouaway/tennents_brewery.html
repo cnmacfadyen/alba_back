@@ -1,12 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
-{% load staticfiles %} 
+{% load staticfiles %}
 
 {% block title_block %}
-    	Dog Jog
+    	Tennents Wellpark Brewery
 {% endblock %}
 
 {% block body_block %}
 <div>
-	<h1>Tennents Wellpark Brewery</h1>
+	<h1>Scottish Vegan Festival</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}tennents_brewery.jpg" alt="Tennents Wellpark Brewery"/>
+</div>
+<div>
+	Fancy a Tennents pint? Want to learn more about your favourite beer? Why not go on the Tennants tour!
+</div>
+<div> 
+	<a href="http://www.tennentstours.com/">To book your ticket, click here!</a>
 </div>
 {% endblock %}

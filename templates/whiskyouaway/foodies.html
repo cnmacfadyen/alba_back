@@ -1,12 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
-{% load staticfiles %} 
+{% load staticfiles %}
 
 {% block title_block %}
-    	Dog Jog
+    	Foodies’ Festival
 {% endblock %}
 
 {% block body_block %}
 <div>
-	<h1>Foodies Festival</h1>
+	<h1>Foodies’ Festival</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}vegan_festival.jpeg" alt="Foodies’ Festival"/>
+</div>
+<div>
+	If you are a foodie then you will enjoy the Foodies' Festival!
+</div>
+<div> 
+	<a href="http://foodiesfestival.com/">To book your ticket, click here!</a>
 </div>
 {% endblock %}

@@ -1,12 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
-{% load staticfiles %} 
+{% load staticfiles %}
 
 {% block title_block %}
-    	Dog Jog
+    	Scottish Vegan Festival
 {% endblock %}
 
 {% block body_block %}
 <div>
 	<h1>Scottish Vegan Festival</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}vegan_festival.jpg" alt="Scottish Vegan Festival"/>
+</div>
+<div>
+	The festival runs from 10:30 to 17:00. With the many number of food stalls, there will be a wide variety of vegan food to try! So, come along!
+</div>
+<div> 
+	<a href="https://www.vegfest.co.uk/event/scottish-vegan-festival-2/">To book your ticket, click here!</a>
 </div>
 {% endblock %}
