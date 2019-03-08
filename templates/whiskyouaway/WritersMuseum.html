@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Writers Museum
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Writers' Museum</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}WritersMuseum.jpg" alt="Writers Museum"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.edinburghmuseums.org.uk/venue/writers-museum">Click here to learn more</a>
+    </div>
+{% endblock %}

@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    National Museum
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>National Museum</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}NationalMuseums.jpg" alt="National Museum"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.nms.ac.uk/national-museum-of-scotland/">Click here to learn more</a>
+    </div>
+{% endblock %}

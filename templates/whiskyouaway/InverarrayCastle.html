@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %}
+
+{% block title_block %}
+    	Highland Food and Drink Festival
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Inveraray Castle</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}InverarrayCastle.jpg" alt="Inveraray Castle"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.zigzagonearth.com/inveraray-castle-scotland/">Click here to learn more</a>
+    </div>
+{% endblock %}

@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Eilean Donan Castle
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Eilean Donan Castle</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}EileanDonanCastle.jpg" alt="Eilean Donan Castle"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.zigzagonearth.com/eilean-donan-castle-scotland/">Click here to learn more</a>
+    </div>
+{% endblock %}

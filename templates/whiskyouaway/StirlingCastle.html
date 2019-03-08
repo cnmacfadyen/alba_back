@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Stirling Castle
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Stirling Castle</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}StirlingCastle.jpg" alt="Stirling Castle"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.stirlingcastle.scot">Click here to learn more</a>
+    </div>
+{% endblock %}

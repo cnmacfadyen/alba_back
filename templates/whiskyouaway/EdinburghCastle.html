@@ -1,2 +1,26 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% extends 'whiskyouaway/base.html' %}
+{% load staticfiles %} 
+
+{% block title_block %}
+    Edinburgh Castle
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Edinburgh Castle</h1>
+</div>
+
+<div>
+	<img src="{{ MEDIA_URL }}EdinburghCastle.jpg" alt="Edinburgh Castle"/>
+</div>
+<div>
+    EC Blurb
+</div>
+<div>
+	<a href="https://www.zigzagonearth.com/visit-edinburgh-castle-scotland/">Click here to learn more</a>
+</div>
+{% endblock %}
+

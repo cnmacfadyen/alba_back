@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Dunrobin Castle
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Dunrobin Castle</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}DunrobinCastle.jpg" alt="Dunrobin Castle"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.zigzagonearth.com/dunrobin-castle-scotland/">Click here to learn more</a>
+    </div>
+{% endblock %}

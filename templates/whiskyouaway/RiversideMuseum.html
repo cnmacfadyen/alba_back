@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Riverside Museum
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Riverside Museum</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}RiversideMuseum.jpg" alt="Riverside Museum"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.glasgowlife.org.uk/museums/venues/riverside-museum">Click here to learn more</a>
+    </div>
+{% endblock %}

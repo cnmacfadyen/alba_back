@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    V & A Museum Dundee
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>V & A Museum Dundee</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}VADundee.jpg" alt="VA Museum"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.vam.ac.uk/dundee">Click here to learn more</a>
+    </div>
+{% endblock %}
