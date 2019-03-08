@@ -76,6 +76,27 @@ urlpatterns = [
 	url(r'^categories/family/KelburnCastle/$', views.kelburn, name='kelburn'),
 	url(r'^categories/family/ObanKayak/$', views.kayak, name='kayak'),
 	url(r'^categories/family/MonikiePark/$', views.monikie, name='monikie'),
-
+	# music urls
+	url(r'^categories/music/king_tuts/$', views.king_tuts, name='king_tuts'),
+	url(r'^categories/music/trnsmt/$', views.trnsmt, name='trnsmt'),
+	url(r'^categories/music/belladrum/$', views.belladrum, name='belladrum'),
+	url(r'^categories/music/islay_music_and_malt/$', views.islay_music_and_malt, name='islay_music_and_malt'),
+	url(r'^categories/music/summer_nights/$', views.summer_nights, name='summer_nights'),
+	url(r'^categories/music/stramash_bar/$', views.stramash_bar, name='stramash_bar'),
+	url(r'^categories/music/burnsfest/$', views.burnsfest, name='burnsfest'),
+	url(r'^categories/music/barrowlands/$', views.barrowlands, name='barrowlands'),
+	url(r'^categories/music/orkney_festival/$', views.orkney_festival, name='orkney_festival'),
+	url(r'^categories/music/crofters/$', views.crofters, name='crofters'),
+	# food and drink urls
+	url(r'^categories/food_and_drink/gin_to_my_tonic/$', views.gin_to_my_tonic, name='gin_to_my_tonic'),
+	url(r'^categories/food_and_drink/vegan_festival/$', views.vegan_festival, name='vegan_festival'),
+	url(r'^categories/food_and_drink/tennents_brewery/$', views.tennents_brewery, name='tennents_brewery'),
+	url(r'^categories/food_and_drink/foodies/$', views.foodies, name='foodies'),
+	url(r'^categories/food_and_drink/speyside_whisky/$', views.speyside_whisky, name='speyside_whisky'),
+	url(r'^categories/food_and_drink/tarbert_seafood/$', views.tarbert_seafood, name='tarbert_seafood'),
+	url(r'^categories/food_and_drink/penicuik_market/$', views.penicuik_market, name='penicuik_market'),
+	url(r'^categories/food_and_drink/autumn_fungi/$', views.autumn_fungi, name='autumn_fungi'),
+	url(r'^categories/food_and_drink/highland_haggis/$', views.highland_haggis, name='highland_haggis'),
+	url(r'^categories/food_and_drink/highland_food_drink/$', views.highland_food_drink, name='highland_food_drink'),
 
 ]

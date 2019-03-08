@@ -280,5 +280,65 @@ def monikie(request):
 
 # music pages
 
+def king_tuts(request):
+	return render(request, 'whiskyouaway/king_tuts.html', {})
+
+def trnsmt(request):
+	return render(request, 'whiskyouaway/trnsmt.html', {})
+
+def belladrum(request):
+	return render(request, 'whiskyouaway/belladrum.html', {})
+
+def islay_music_and_malt(request):
+	return render(request, 'whiskyouaway/islay_music_and_malt.html', {})
+
+def summer_nights(request):
+	return render(request, 'whiskyouaway/summer_nights.html', {})
+
+def stramash_bar(request):
+	return render(request, 'whiskyouaway/stramash_bar.html', {})
+
+def burnsfest(request):
+	return render(request, 'whiskyouaway/burnsfest.html', {})
+
+def barrowlands(request):
+	return render(request, 'whiskyouaway/barrowlands.html', {})
+
+def orkney_festival(request):
+	return render(request, 'whiskyouaway/orkney_festival.html', {})
+
+def crofters(request):
+	return render(request, 'whiskyouaway/crofters.html', {})
+
 # food pages
-	
+
+def gin_to_my_tonic(request):
+	return render(request, 'whiskyouaway/gin_to_my_tonic.html', {})
+
+def vegan_festival(request):
+	return render(request, 'whiskyouaway/vegan_festival.html', {})
+
+def tennents_brewery(request):
+	return render(request, 'whiskyouaway/tennents_brewery.html', {})
+
+def foodies(request):
+	return render(request, 'whiskyouaway/foodies.html', {})
+
+def speyside_whisky(request):
+	return render(request, 'whiskyouaway/speyside_whisky.html', {})
+
+def tarbert_seafood(request):
+	return render(request, 'whiskyouaway/tarbert_seafood.html', {})
+
+def penicuik_market(request):
+	return render(request, 'whiskyouaway/penicuik_market.html', {})
+
+def autumn_fungi(request):
+	return render(request, 'whiskyouaway/autumn_fungi.html', {})
+
+def highland_haggis(request):
+	return render(request, 'whiskyouaway/highland_haggis.html', {})
+
+def highland_food_drink(request):
+	return render(request, 'whiskyouaway/highland_food_drink.html', {})
+
