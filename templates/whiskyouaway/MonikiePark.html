@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Monikie Park
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Monikie Park</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}MonikiePark.jpg" alt="Monikie Park"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="http://archive.angus.gov.uk/leisureaa/rangerservice/monikie.htm">Click here to learn more</a>
+    </div>
+{% endblock %}

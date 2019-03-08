@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Oban Kayak
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Oban Kayak</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}ObanKayak.jpg" alt="Oban Kayak"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.seakayakoban.com">Click here to learn more</a>
+    </div>
+{% endblock %}

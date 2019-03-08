@@ -1,2 +1,22 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    Rob Roy Loop
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Rob Roy Loop</h1>
+</div>
+
+<div>
+        <img src="{{ MEDIA_URL }}RobRoyLoop.jpg" alt="Rob Roy Loop"/>
+    </div>
+    <div>
+        EC Blurb
+    </div>
+    <div>
+        <a href="https://www.lochlomond-trossachs.org/things-to-do/cycling/cycling-routes/rob-roy-loop/">Click here to learn more</a>
+    </div>
+{% endblock %}
