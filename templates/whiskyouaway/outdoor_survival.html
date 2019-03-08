@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Outdoor Survival Courses
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Outdoor Survival Courses</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}outdoor_survival.jpg" alt="Outdoor Survival Courses"/>
+</div>
+<div>
+	Learn how to survive in Scotland's rugged landscape by taking a Wildwood Bushcraft course. Be it a nomadic coastal adventure or a foraging retreat, there's plenty to learn and to see.
+</div>
+<div> 
+	<a href="https://www.wildwoodbushcraft.com/scotland-courses?gclid=EAIaIQobChMIpKnBs-rU4AIVROR3Ch07qAOrEAAYAiAAEgK9Y_D_BwE">Click here to find out more</a>
+</div>
+{% endblock %}

@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Quadmania
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Quadmania</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}quadmania.jpg" alt="Quadmania"/>
+</div>
+<div>
+	For those seeking an outdoor adventure that gets the pulses racing, Quadmania is the perfect choice. Be it trekking by quad bike through woodland, farmland and forests, or clay shooting and archery, there's plenty on offer for everyone to enjoy!
+</div>
+<div> 
+	<a href="http://www.quadmaniascotland.co.uk">Click here to find out more</a>
+</div>
+{% endblock %}

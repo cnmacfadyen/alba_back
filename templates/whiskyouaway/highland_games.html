@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Highland Games
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Highland Games</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}highland_games.jpg" alt="Highland Games"/>
+</div>
+<div>
+	Experience an outdoor event steeped in Scottish tradition. Whether it's tossing the caber or haggis hurling, there's lots to see and enjoy. There are events held throughout the country, so check out the link below to find one near you.
+</div>
+<div> 
+	<a href="http://www.shga.co.uk">Click here to find out more</a>
+</div>
+{% endblock %}
