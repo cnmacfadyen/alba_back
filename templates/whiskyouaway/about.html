@@ -2,46 +2,29 @@
 {% load staticfiles %} 
 
 {% block title_block %}
-    	About
+		About
 {% endblock %}
 
 {% block body_block %}
 <div>
+	<img src="{{ MEDIA_URL}}about.png" alt="Glasgow Skyline"/>
 	<h1>About Us</h1>
+</div>
+
+<div>
+	<p>WhiskYouAway brings you the best events and attractions that Scotland has to offer! 
+	Browse through our various categories to view information, photos and reviews of the latest events and most exciting attractions in the country.
+	</p>
+	<h2>Why Sign Up?<br/></h2>
+	<p><b>Have Your Say</b><br/>
+		When you sign up for an account with WhiskYouAway, you will be able to write reviews about any of the events or attractions featured on the website.</p>
+
+	<p><b>Get Tailored Content</b><br/>
+		You will be able to choose your favourite categories from the list and view events based on your choice.</p>
+		
+	<p><b>Meet Like-Minded Travellers!</b><br/>
+		Our 'Organise Meet-Ups' feature allows you to communicate with others who wish to attend the same events. This is perfect for solo travellers visiting Scotland, or those who want to meet new friends with similar interests!</p>
+	
 </div>
 {% endblock %}
 
-
-<!--{% load staticfiles %}
-<html>
-	<head>
-		<title>Whisk You Away</title>
-	</head>
-<body>
-		<div>
-			<img src="{% static "images/logo.jpg" %}"
-			alt="Whisk You Away" />
-		</div>
-		<h1><u>About Us</u></h1>
-		<!-- Need to create something so that the categories are ordered by date -->
-		</div>
-		<div>
-			<ul>
-				<li><a href="{% url 'profile' %}">Profile</a></li>
-				<li><a href="{% url 'logout' %}"">Logout</a></li>
-				<li><a href="{% url 'meet_up' %}">Organise Meet Ups</a></li> 
-				<li><a href="{% url 'login' %}">Sign In</a></li>
-				<li><a href="{% url 'register' %}">Sign Up</a></li>
-				<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
-				<li><a href="{% url 'categories' %}">Categories</a></li>
-				<li><a href="{% url 'view_attractions' %}">View Attractions</a></li>
-				<li><a href="{% url 'about' %}">About Us</a></li>
-				<li><a href="{% url 'index' %}">Home</a></li>
-			</ul>
-		</div>
-		<!-- <div> -->
-			<!-- <p>Visits: {{ visits }}</p> -->
-			<!-- Left the visits bit in for now, but probably not necessary -->
-		<!-- </div> -->
-</body>
-</html>-->
