@@ -229,7 +229,7 @@ def outdoor_explore(request):
 # history pages
 
 def inverary(request):
-	return render(request, 'whiskyouaway/InveraryCastle.html', {})
+	return render(request, 'whiskyouaway/InverarrayCastle.html', {})
 
 def dunrobin(request):
 	return render(request, 'whiskyouaway/DunrobinCastle.html', {})

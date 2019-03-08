@@ -59,7 +59,7 @@ urlpatterns = [
 	url(r'^categories/outdoors/quadmania/$', views.quadmania, name='quadmania'),
 	url(r'^categories/outdoors/outdoor_explore/$', views.outdoor_explore, name='outdoor_explore'),
 	# history urls
-	url(r'^categories/history/InveraryCastle/$', views.inverary, name='inverary'),
+	url(r'^categories/history/InverarayCastle/$', views.inverary, name='inverary'),
 	url(r'^categories/history/DunrobinCastle/$', views.dunrobin, name='dunrobin'),
 	url(r'^categories/history/EdinburghCastle/$', views.edinburgh, name='edinburgh'),
 	url(r'^categories/history/StirlingCastle/$', views.stirling, name='stirling'),
