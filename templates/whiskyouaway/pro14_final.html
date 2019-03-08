@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Pro 14 Final
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Pro 14 Final</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}pro14_final.jpg" alt="Pro 14 Final"/>
+</div>
+<div>
+	This year, the world-renowned Guinness Pro 14 will reach its conclusion at Celtic Park. Glasgow Warriors and Edinburgh are still in the hunt, so there are other chances to catch some top tier rugby. To learn more, visit the link below.
+</div>
+<div> 
+	<a href="https://www.pro14rugby.org/final/">Click here to find out more</a>
+</div>
+{% endblock %}

@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Cycling Track World Cup
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Cycling Track World Cup</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}cycling_world_cup.jpg" alt="Cycling Track World Cup"/>
+</div>
+<div>
+	This year, the second round of the Track Cycling World Cup series takes place at the Sir Chris Hoy Velodrome in Glasgow. Watch the best cyclists in the world on the journey to Tokyo 2020.
+</div>
+<div> 
+	<a href="http://www.trackworldcup.co.uk">Click here to find out more</a>
+</div>
+{% endblock %}

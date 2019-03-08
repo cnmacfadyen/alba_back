@@ -165,7 +165,7 @@ def hive(request):
 # sport pages
 
 def indoor_athletics(request):
-	return render(request, 'whiskyouaway/indoor_athetics.html', {})
+	return render(request, 'whiskyouaway/indoor_athletics.html', {})
 
 def pro14_final(request):
 	return render(request, 'whiskyouaway/pro14_final.html', {})

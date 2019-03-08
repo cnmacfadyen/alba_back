@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %}
+
+{% block title_block %}
+    	Indoor Athletics
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Indoor Athletics Championships</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}indoor_athletics.jpg" alt="Indoor Athletics"/>
+</div>
+<div>
+	This year, the 35th European Indoor Athletics Championships are taking place in Glasgow. For your chance to see over 600 top-class athletes from 50 nations compete for medals at the Emirates Arena, click on the link below.
+</div>
+<div> 
+	<a href="https://glasgow2019athletics.com">Click here to find out more</a>
+</div>
+{% endblock %}

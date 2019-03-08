@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Water Ski
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Loch Lomond Water Ski Club</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}water_ski.jpg" alt="Water Ski"/>
+</div>
+<div>
+	Learn how to water ski on the famous Loch Lomond!
+</div>
+<div> 
+	<a href="http://www.lochlomondwaterskiclub.co.uk">Click here to find out more</a>
+</div>
+{% endblock %}
