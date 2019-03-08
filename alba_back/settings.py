@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whiskyouaway',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,9 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [STATIC_DIR, ]
 
 STATIC_URL = '/static/'
+
+REGISTRATION_OPEN=True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/whiskyouaway/'
+LOGIN_URL= '/accounts/login/'
