@@ -1,2 +1,21 @@
 {% extends 'whiskyouaway/base.html' %}
 {% load staticfiles %} 
+
+{% block title_block %}
+    	Highland Wildlife Park
+{% endblock %}
+
+{% block body_block %}
+<div>
+	<h1>Highland Wildlife Park</h1>
+</div>
+<div>
+	<img src="{{ MEDIA_URL}}highland_wildlife.jpg" alt="Highland Wildlife Park"/>
+</div>
+<div>
+	Want to see wildlife in a spectacular setting? Highland Wildlife Park is the place for you. With a diverse range of wildlife, from native species to animals from further afield, the Park offers you the chance to explore both in the car and on foot.
+</div>
+<div> 
+	<a href="http://www.highlandwildlifepark.org.uk/">For more information, click here!</a>
+</div>
+{% endblock %}
