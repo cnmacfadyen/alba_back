@@ -48,5 +48,10 @@ class Review(models.Model):
 	username = models.CharField(max_length=50)
 	rating = models.IntegerField()
 
+class ContactUs(models.Model):
+	firstname = models.CharField(max_length=50)
+	surname = models.CharField(max_length=50)
+	question = models.CharField(max_length=200)
+
 
 

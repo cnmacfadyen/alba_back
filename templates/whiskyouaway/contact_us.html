@@ -1,12 +1,33 @@
 {% extends 'whiskyouaway/base.html' %}
-{% load staticfiles %} 
-
+{% load staticfiles %}
 {% block title_block %}
-    	About
+    Contact Us  
 {% endblock %}
 
 {% block body_block %}
 <div>
-	<h1>Contact Us</h1>
+        <h1>Contact Us</h1>
+        <h2>Issue</h2>
+        <select>
+            <option value="login">Login</option>
+            <option value="signup">Registration</option>
+            <option value="meetup">Meetup</option>
+            <option value="events">Events</option>
+            <option value="other">Other</option>
+        </select>
+        <br />
+        <br />
+        <br />
+		<form id="contact_us_form" method="post" action="{% url 'contact_us' %}">
+            
+            <!-- <input type="textarea" rows="8" cols="100" placeholder="Enter Your Question" onfocus="clearContent(this)"> -->
+            <textarea id="textarea" rows="8" cols="100" placeholder="Enter Your Question" onfocus="clearContent(this)" form="contact_us"></textarea>
+<br>
+
+
+  
+<br>
+<input type="submit" name="Submit">
+</form>
 </div>
 {% endblock %}
