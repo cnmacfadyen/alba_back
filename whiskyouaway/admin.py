@@ -8,6 +8,9 @@ class CategoryAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
 	list_display = ('title', 'category', 'url')
 
+# class UserProfile(admin.ModelAdmin):
+# 	prepopulated_fields=('username')
+
 # Register your models here.
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Event, EventAdmin)

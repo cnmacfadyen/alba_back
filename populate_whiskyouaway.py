@@ -10,7 +10,8 @@ def populate():
 	animal_pages = [
 	{"title": "Dog Jog Glasgow",
 	"url": "/whiskyouaway/categories/animals/dog_jog/",
-	"eurl": "http://www.whatsonglasgow.co.uk/events/pet/"},
+	"eurl": "http://www.whatsonglasgow.co.uk/events/pet/",
+	"picture": "media/dog_jog.png"},
 	{"title": "The Dog Lover Show",
 	"url": "/whiskyouaway/categories/animals/dog_lover",
 	"eurl": "http://www.whatsonglasgow.co.uk/events/pet/"},
