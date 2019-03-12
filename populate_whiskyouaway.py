@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alba_back.settings')
 
 import django
 django.setup()
-from whiskyouaway.models import Category, Event, CategoryContainer
+from whiskyouaway.models import Category, Event
 
 def populate():
 

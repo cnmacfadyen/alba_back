@@ -1,5 +1,5 @@
 from django.contrib import admin
-from whiskyouaway.models import Category, Event, CategoryContainer, UserProfile, Review
+from whiskyouaway.models import Category, Event, UserProfile, Review
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -14,6 +14,5 @@ class EventAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Event, EventAdmin)
-admin.site.register(CategoryContainer)
 admin.site.register(UserProfile)
 admin.site.register(Review)
