@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from whiskyouaway.models import Category, Event, UserProfile, Review
+from whiskyouaway.models import Category, Event, UserProfile, Review, Advert
 from whiskyouaway.forms import UserForm, UserProfileForm, Review
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -46,7 +46,9 @@ def restricted(request):
 #	return render(request, 'whiskyouaway/logout.html', {})
 
 def meet_up(request):
-	return render(request, 'whiskyouaway/meet_up.html', {})
+	advert_list = Advert.objects.order_by('email')
+	context_dict = {'advertList': advert_list}
+	return render(request, 'whiskyouaway/meet_up.html', context=context_dict)
 
 def view_attractions(request):
 	return render(request, 'whiskyouaway/view_attractions.html', {})

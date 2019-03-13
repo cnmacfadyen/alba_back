@@ -11,9 +11,8 @@
         <br />
         <br />
 		<form id="advert_form" method="post" action="{% url 'adverts' %}">
-            
-            <!-- <input type="textarea" rows="8" cols="100" placeholder="Enter Your Question" onfocus="clearContent(this)"> -->
-            <textarea id="textarea" rows="8" cols="100" placeholder="Enter Your Advert Here..." onfocus="clearContent(this)" form="advert_form"></textarea>
+
+        <textarea id="textarea" rows="8" cols="100" placeholder="Enter Your Advert Here..." onfocus="clearContent(this)" form="advert_form"></textarea>
 <br>  
 <br>
 <input type="submit" name="Submit"> {% csrf_token %}

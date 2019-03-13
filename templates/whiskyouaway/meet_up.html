@@ -13,8 +13,14 @@
 	Search our adverts to find people
 	attending the same events or <a href="{% url 'adverts' %}">post your own advert.</a>
 	<br/>
-	<h2>Current Adverts</h2> 
-	
-	
+	<br/>
+	<h2>Current Adverts</h2>
+			{% for Advert in advertList %}
+			{{ Advert.advertText }}
+			<br/>
+			<a href="{{ Advert.email }}">{{ Advert.email }}</a>
+			<br/>
+			<br/>
+			{% endfor %} 
 </div>
 {% endblock %}

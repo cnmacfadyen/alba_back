@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alba_back.settings')
 
 import django
 django.setup()
-from whiskyouaway.models import Category, Event
+from whiskyouaway.models import Category, Event, Advert
 
 def populate():
 
@@ -314,6 +314,17 @@ def populate():
 	"image":"static/images/food/highland_food_and_drink_festival.jpg"}
 	]
 
+	adverts = [
+	{"advertText": "Hi! I’ve come travelling to Scotland from Indonesia and I am looking to go and visit some historical sites, but it would be good to have someone come with me. I am in Scotland until the end of April 2019. Would anyone be interested in going to visit Stirling Castle? If not Stirling Castle, I’d be happy to visit another one. Email me if you’re interested. Thanks,Lia.",
+	"email": "lia@example.com"},
+
+	{"advertText": "Hi guys,I am really up for going to Quadmania, but my friends don’t want to go with me. Anyone interested in joining? Drop me an email if you fancy it. Let me know, Jill",
+	"email": "jill@example.com"},
+
+	{"advertText": "I love whisky, do you love whisky? I’m arranging a group trip to the Spirit of Speyside Whisky Festival. There will be a bus leaving from the Botanic Gardens in Glasgow at 8.30am on the 4th of May. We still have a few seats available, so sign up fast if you don’t want to miss out. Hamish",
+	"email": "hamish@example.com"}
+	]
+
 	cats = {"Music": {"events": music_pages},
 	"Animals": {"events": animal_pages},
 	'Nightlife': {"events": nightlife_pages},
@@ -334,6 +345,11 @@ def populate():
 		for e in Event.objects.filter(category=c):
 			print("- {0} - {1}".format(str(c), str(e)))
 
+	for item in adverts:
+		a = add_ad(item["advertText"], item["email"])
+		print(format(str(a)))
+
+
 def add_event(cat, title, url):
 	e = Event.objects.get_or_create(category=cat, title=title)[0]
 	e.url=url
@@ -344,6 +360,10 @@ def add_cat(name):
 	c = Category.objects.get_or_create(name=name)[0]
 	c.save()
 	return c
+
+def add_ad(advertText, email):
+	a = Advert.objects.get_or_create(advertText=advertText, email=email)
+	return a
 
 
 if __name__ == '__main__':

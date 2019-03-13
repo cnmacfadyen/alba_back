@@ -43,9 +43,12 @@ class Review(models.Model):
 	rating = models.IntegerField()
 
 class Advert(models.Model):
-	events = models.ForeignKey(Event)
+	# category = models.ForeignKey(Category)
 	advertText = models.CharField(max_length=200)
-	user = models.OneToOneField(User)
+	email = models.CharField(max_length=200)
+	# user = models.OneToOneField(User)
+	def __str__(self):
+		return self.email
 
 class ContactUs(models.Model):
 	firstname = models.CharField(max_length=50)

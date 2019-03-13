@@ -22,7 +22,7 @@ class ReviewForm(forms.ModelForm):
 class AdvertForm(forms.ModelForm):
 	class meta:
 		model = Advert
-		fields = ('event', 'advertText', 'user')
+		fields = ('event', 'advertText', 'email', 'user')
 
 class ContactUs(forms.ModelForm):
 	class meta:
