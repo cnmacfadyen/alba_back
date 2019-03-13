@@ -1,0 +1,43 @@
+{% extends 'whiskyouaway/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Locate Your Interests on Map!
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="header">
+	<center><img src ="{% static 'images/whiskyouaway.jpg' %}" alt
+		="Whisk You Away logo" /></center>
+	</div>
+<div class="row">
+		<div class="col-lg-12" style="padding: 15px;"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2" style="padding: 15px;">
+	</div>
+	<div class="col-lg-8" style="padding: 15px;">
+
+<center>
+	<h1>Locate Your Interests</h1><br><br>
+
+	Adventure awaits, go find it!
+
+	<p>
+	You can enter event name and city or your interest and city e.g. Dunrobin Glasgow...
+	</p><br>
+
+	<p>
+	<input id="interest" type="text" placeholder="Enter your travel interest here" /><br><br>
+	<button class="btn" id="btn">Find >></button>
+	</p><br>
+
+	<div id="map" style<div id="map" style="width:50%;height:400px;"></div>
+    <br><br></center>
+
+</div></div><br><br><br><br>
+<script type="text/javascript" src="{% static 'js/interests_map.js' %}"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDA8_R8RYE2ZDQTXGsBBdcA2YOKmFQN5PQ&libraries=places&callback=initMap"></script>
+{% endblock %}  
