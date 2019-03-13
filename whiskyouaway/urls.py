@@ -11,6 +11,7 @@ urlpatterns = [
 	url(r'^categories/$', views.categories, name='categories'),
 	url(r'^categories/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
 	url(r'^categories/(?P<category_name_slug>[\w\-]+)/reviews/$', views.reviews, name='reviews'),
+	url(r'^interests_map/', views.interests_map, name='interests_map'),
 	#url(r'^register/$', views.register, name='register'),
 	#url(r'^login/$', views.user_login, name='login'),
 	url(r'^restricted/', views.restricted, name='restricted'),

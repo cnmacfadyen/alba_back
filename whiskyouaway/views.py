@@ -30,6 +30,9 @@ def profile(request):
 def adverts(request):
 	return render(request, 'whiskyouaway/adverts.html', {})
 
+def interests_map(request):
+	return render(request, 'whiskyouaway/interests_map.html', {})
+
 #def register(request):
 #	return render(request, 'whiskyouaway/register.html', {})
 
