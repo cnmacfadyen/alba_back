@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from whiskyouaway.models import Category,  UserProfile, Review, ContactUs
+from whiskyouaway.models import Category, UserProfile, Review, ContactUs, Advert
 
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
@@ -18,6 +18,11 @@ class ReviewForm(forms.ModelForm):
 	class meta:
 		model = Review
 		fields = ('username', 'review', 'ratings')
+
+class AdvertForm(forms.ModelForm):
+	class meta:
+		model = Advert
+		fields = ('event', 'advertText', 'user')
 
 class ContactUs(forms.ModelForm):
 	class meta:

@@ -42,6 +42,11 @@ class Review(models.Model):
 	username = models.CharField(max_length=50)
 	rating = models.IntegerField()
 
+class Advert(models.Model):
+	events = models.ForeignKey(Event)
+	advertText = models.CharField(max_length=200)
+	user = models.OneToOneField(User)
+
 class ContactUs(models.Model):
 	firstname = models.CharField(max_length=50)
 	surname = models.CharField(max_length=50)

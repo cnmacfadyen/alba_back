@@ -26,6 +26,10 @@ def contact_us(request):
 def profile(request):
 	return render(request, 'whiskyouaway/profile.html', {})
 
+@login_required
+def adverts(request):
+	return render(request, 'whiskyouaway/adverts.html', {})
+
 #def register(request):
 #	return render(request, 'whiskyouaway/register.html', {})
 
