@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.template.defaultfilters  import slugify
 from django.contrib.auth.models import User
 
@@ -35,6 +36,14 @@ class UserProfile(models.Model):
 	picture = models.ImageField(upload_to='profile_images', blank=True)
 	def __str__(self):
 		return self.user.username
+
+class UserProfileForm(forms.ModelForm):
+	website = forms.URLField(required=False)
+	picture = forms.ImageField(required=False)
+
+	class Meta:
+		model = UserProfile
+		exclude = ('user',)
 
 class Review(models.Model):
 	events = models.ForeignKey(Event)
