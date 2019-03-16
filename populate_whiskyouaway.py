@@ -400,7 +400,7 @@ def populate():
 		"categories": "Animals",
 		# "time": 20,
 		# "serves": 4,
-		"image": "dog_jog.jpg",
+		"image": "dog_jog.png",
 		"user": "Admin",
 		"url": "https://www.dogjog.co.uk/glasgow/",
 		},

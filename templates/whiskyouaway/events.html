@@ -47,7 +47,7 @@ Events
                         <div class="containter event {{ Events.categories }}">
                             <div class="row">
                                 <div class="col-lg-5" style="padding: 15px;">
-                                    <img class="fish-image" height="100" width="180" src="{{ MEDIA_URL }}/{{ Events.image }}"
+                                    <img class="event-image" height="100" width="180" src="{{ MEDIA_URL }}/{{ Events.image }}"
                                          alt="Picture of {{ Events.name}}"/></div>
                                 <div class="col-lg-7" style="padding: 15px;">
                                     <a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
