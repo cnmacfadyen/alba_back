@@ -18,7 +18,7 @@
 			{% for Advert in advertList %}
 			{{ Advert.advertText }}
 			<br/>
-			<a href="{{ Advert.email }}">{{ Advert.email }}</a>
+			<a href="mailto:{{ Advert.email }}?subject=Whisk You Away Meet Up">{{ Advert.email }}</a>
 			<br/>
 			<br/>
 			{% endfor %} 

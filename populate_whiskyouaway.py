@@ -315,14 +315,35 @@ def populate():
 	]
 
 	adverts = [
-	{"advertText": "Hi! I’ve come travelling to Scotland from Indonesia and I am looking to go and visit some historical sites, but it would be good to have someone come with me. I am in Scotland until the end of April 2019. Would anyone be interested in going to visit Stirling Castle? If not Stirling Castle, I’d be happy to visit another one. Email me if you’re interested. Thanks,Lia.",
+	{"advertText": "Hi! I’ve come travelling to Scotland from Indonesia and I am looking to go and visit some historical sites, but it would be good to have someone come with me. I am in Scotland until the end of April 2019. Would anyone be interested in going to visit Stirling Castle? If not Stirling Castle, I’d be happy to visit another one. Email me if you’re interested. Thanks, Lia.",
 	"email": "lia@example.com"},
 
 	{"advertText": "Hi guys,I am really up for going to Quadmania, but my friends don’t want to go with me. Anyone interested in joining? Drop me an email if you fancy it. Let me know, Jill",
 	"email": "jill@example.com"},
 
 	{"advertText": "I love whisky, do you love whisky? I’m arranging a group trip to the Spirit of Speyside Whisky Festival. There will be a bus leaving from the Botanic Gardens in Glasgow at 8.30am on the 4th of May. We still have a few seats available, so sign up fast if you don’t want to miss out. Hamish",
-	"email": "hamish@example.com"}
+	"email": "hamish@example.com"},
+
+	{"advertText": "Hi, I’m a huge fan of Oasis and was really excited to book some tickets for a gig at King Tuts, where they were discovered, while I spend some time in Scotland. Sadly, my friend who was supposed to come with me can no longer make it, so I have a spare ticket. It’s yours for the value price. Drop me a line if you’re interested. The ticket is for Alice Merton on the 22nd of March. Cheers, Olivia.",
+	"email": "olivia@example.com"},
+
+	{"advertText":"Hey, I’m embarking on a challenge to attend a live match in each of Europe’s top football leagues. I’ve ticked off five countries so far and Scotland is next on my list. If anyone has any recommendations about what teams are the best to watch in Scotland and how I should plan my trip, please let me know. I don’t mind what teams I see play, just hoping that there’s a good atmosphere, but obviously the quality of the stadium’s pies is obviously going an important factor as well! I’d really appreciate any advice you can give me. Thanks, Sven.",
+	"email":"sven@example.com"},
+
+	{"advertText":"Hello, I am travelling to Scotland to try to take on the West Highland Way! Very excited about the challenge and the beautiful scenery I’m sure to see. I’m going to be starting on the 14th of June, and I’ll hopefully be finished within the week. Anyone else planning to do the hike around then? If so, let me know. It’d be good to get to know you beforehand. Thank you, Petra.",
+	"email":"petra@example.com"},
+
+	{"advertText":"Hi everyone, I’m looking to get a group together to do the Dog Jog in Glasgow to raise some money for the RSPCA. Anyone interested in joining? Drop me an email if you are! Thanks, Jenny",
+	"email":"jenny@example.com"},
+
+	{"advertText":"Hey! A few friends and I from Italy are spending some time in Glasgow and are planning to have a wild night out after watching Zebre play Glasgow Warriors. We always feel that the bigger the crowd, the greater the night, so please come and join us! We’re going to be starting our night in Firewater, and from there, who knows?! Let us know, Matteo.",
+	"email":"matteo@example.com"},
+
+	{"advertText":"Hello, My family and I are travelling up to Scotland from Cardiff for an adventure-packed holiday. We’d love to meet other families with similar interests to go on trips with us! First adventure on our list is kayaking in Oban! If you and your family are in and around the Oban area between the 15th and the 28th of July, let us know. Happy travelling, everyone. Richard.",
+	"email":"richard@example.com"},
+
+	{"advertText":"I consider myself a foodie, so I’m incredibly excited to be attending the Foodies Festival in Edinburgh this August. I’m going to be travelling down from Aberdeen, so was wondering if there was anyone else heading down from around this area so we could arrange a lift. Let me know, Bianca.",
+	"email":"bianca@example.com"}
 	]
 
 	cats = {"Music": {"events": music_pages},
