@@ -12,8 +12,16 @@ from datetime import datetime
 # Create your views here.
 
 def index(request):
-	response = render(request, 'whiskyouaway/home.html', {})
+	events_list = Events.objects.order_by('name')[:5]
+	category_list = Categories.objects.order_by('name')
+	context_dict = {'eventsList': events_list,
+					'categoryList': category_list}
+
+	response = render(request, 'whiskyouaway/home.html', context=context_dict)
+
 	return response
+	# response = render(request, 'whiskyouaway/home.html', {})
+	# return response
 
 def about(request):
 	return render(request, 'whiskyouaway/about.html', {})

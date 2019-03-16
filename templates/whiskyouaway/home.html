@@ -13,5 +13,29 @@
 	<h1 class="display-3">Fàilte!</h1>
 	<h1 class="display-3"><u>Trending Events</u></h1>
 </div>
+
+<div class="col-lg-8" style="padding: 15px;">
+		<div>
+			{% for Events in eventsList %}
+			<div class="containter event {{ Events.categories }}">
+				<div class="row">
+					<div class="col-lg-5" style="padding: 15px;">
+						<img class="event-image" height="100" width="180" src="{{ MEDIA_URL }}/{{ Events.image }}"
+							 alt="Picture of {{ Events.name}}"/></div>
+					<div class="col-lg-7" style="padding: 15px;">
+						<a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
+						<p><b>Category:</b> <i> {{ Events.categories }}</i></p>
+					</div>
+				</div>
+				<hr>
+			</div>
+			{% endfor %}
+			<br><br><br>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
 
