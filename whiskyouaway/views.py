@@ -34,7 +34,6 @@ def adverts(request):
 def interests_map(request):
 	return render(request, 'whiskyouaway/interests_map.html', {})
 
-<<<<<<< HEAD
 def events(request):
 	#Get all recipes and fish in alphabetical order
 	events_list = Events.objects.order_by('name')
@@ -52,7 +51,6 @@ def show_events(request, events_name_slug, *args, **kwargs):
 
 	return render(request, 'whiskyouaway/event.html', context_dict)
 
-=======
 @login_required 
 def register_profile(request): 
 	form = UserProfileForm()
@@ -98,7 +96,6 @@ def list_profiles(request):
 	return render(request, 'whiskyouaway/list_profiles.html',
 		{'userprofile_list': userprofile_list})
 	
->>>>>>> 2639267bb2d01b347ba274b2f599d60cb48bfb83
 #def register(request):
 #	return render(request, 'whiskyouaway/register.html', {})
 

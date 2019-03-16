@@ -79,8 +79,6 @@ class UserProfile(models.Model):
 	def __str__(self):
 		return self.user.username
 
-<<<<<<< HEAD
-=======
 class UserProfileForm(forms.ModelForm):
 	website = forms.URLField(required=False)
 	picture = forms.ImageField(required=False)
@@ -95,7 +93,6 @@ class Review(models.Model):
 	username = models.CharField(max_length=50)
 	rating = models.IntegerField()
 
->>>>>>> 2639267bb2d01b347ba274b2f599d60cb48bfb83
 class Advert(models.Model):
 	# category = models.ForeignKey(Category)
 	advertText = models.CharField(max_length=200)
