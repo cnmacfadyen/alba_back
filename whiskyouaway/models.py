@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.template.defaultfilters  import slugify
 from django.contrib.auth.models import User
 
@@ -78,6 +79,23 @@ class UserProfile(models.Model):
 	def __str__(self):
 		return self.user.username
 
+<<<<<<< HEAD
+=======
+class UserProfileForm(forms.ModelForm):
+	website = forms.URLField(required=False)
+	picture = forms.ImageField(required=False)
+
+	class Meta:
+		model = UserProfile
+		exclude = ('user',)
+
+class Review(models.Model):
+	events = models.ForeignKey(Event)
+	writtenReview = models.CharField(max_length=200)
+	username = models.CharField(max_length=50)
+	rating = models.IntegerField()
+
+>>>>>>> 2639267bb2d01b347ba274b2f599d60cb48bfb83
 class Advert(models.Model):
 	# category = models.ForeignKey(Category)
 	advertText = models.CharField(max_length=200)
