@@ -3,7 +3,49 @@ from django.template.defaultfilters  import slugify
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Categories(models.Model):
+	name = models.CharField(max_length=128, unique=True) #name has to be unique
+	image = models.ImageField(upload_to='static/categories_images', blank=False)
 
+	def __str__(self):
+		return self.name
+
+
+#The Recipe class takes in attributes that data relevant for its input
+class Events(models.Model):
+	
+	user = models.CharField(max_length=128, default = "Admin")
+	def __unicode__(self):
+		return self.name
+	
+	name = models.CharField(max_length=128, null=True)
+	description = models.CharField(max_length=9999, null=True)
+	categories = models.ForeignKey(Categories)
+	avgRating = models.FloatField(null=True)
+	slug = models.SlugField(null=True, blank=True)
+	image = models.ImageField(upload_to='events_images', blank=False)
+	url = models.URLField(max_length=128)
+
+	# saves slug as name and saves it as Recipe. only allows time and serves to be set to 1 if <0 is entered
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.name)
+		super(Events, self).save(*args, **kwargs)
+
+	# returns name
+	def __str__(self):
+		return self.name
+
+#The Review class takes in attributes that data relevant for its input and uses forieng keys to refer to database
+class Review(models.Model):
+	events = models.ForeignKey(Events)
+	user = models.ForeignKey(User)
+	rating = models.IntegerField(blank=True, default = 5)
+	comment = models.CharField(max_length=2000, null=True)
+	date_posted = models.DateTimeField(auto_now=True)
+
+	# returns comment
+	def __str__(self):
+		return self.comment
 class Category(models.Model):
 	name = models.CharField(max_length=128, unique=True)
 	views = models.IntegerField(default=0)
@@ -35,12 +77,6 @@ class UserProfile(models.Model):
 	picture = models.ImageField(upload_to='profile_images', blank=True)
 	def __str__(self):
 		return self.user.username
-
-class Review(models.Model):
-	events = models.ForeignKey(Event)
-	writtenReview = models.CharField(max_length=200)
-	username = models.CharField(max_length=50)
-	rating = models.IntegerField()
 
 class Advert(models.Model):
 	# category = models.ForeignKey(Category)

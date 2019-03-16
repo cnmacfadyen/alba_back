@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alba_back.settings')
 
 import django
 django.setup()
-from whiskyouaway.models import Category, Event, Advert
+from whiskyouaway.models import Category, Event, Advert, Categories, Events
 
 def populate():
 
@@ -346,6 +346,118 @@ def populate():
 	"email":"bianca@example.com"}
 	]
 
+	categories = [
+	{"name": "Animals",
+		
+		 "image": "static/animals/edinburgh_zoo.jpg",
+		
+		 },
+		{"name": "Family",
+
+		 "image": "static/fish_images/mackerel.jpg",
+ 
+		 },
+		{"name": "Food",
+		
+		 "image": "static/fish_images/seabass.jpg",
+	   
+		 },
+		{"name": "History",
+		
+		 "image": "static/fish_images/seabream.jpg",
+	
+		 },
+		{"name": "Music",
+		
+		 "image": "static/fish_images/oyster.jpg",
+  
+		 },
+		{"name": "Nightlife",
+
+		 "image": "static/fish_images/mussels.jpg",
+	   
+		 },
+		{"name": "Outdoors",
+ 
+		 "image": "static/fish_images/brill.jpg",
+   
+		 },
+ 
+		{"name": "Sport",
+	  
+		 "image": "static/fish_images/salmon.jpg",
+
+		 },
+
+	]
+
+	events = [
+		{
+		"name": "Dog Jog",
+		"description": "Looking to get fit and spend time with your dog? Dog Jog helps you to raise money for others, get fit and spend time with your canine buddy. What's not to love?! For more information, check out the link below.",
+		# "ingredients": "Vegetable oil, for frying\n 1/4 red cabbage, thinly sliced (about 1 1/2 cups)\n 1/2 cup fresh cilantro, roughly chopped\nJuice of 1 lime, plus wedges for serving\n2 tablespoons honey or agave nectar\n1/2 cup mayonnaise\nKosher salt\n12 corn tortillas\n3/4 cup all-purpose flour\n1/2 teaspoon chili powder\nFreshly ground pepper\n1 1/4 pounds skinless halibut fillet, cut into 2-by-1/2-inch pieces\n1 Hass avocado\n1/2 cup fresh salsa",
+		# "method": "Heat about 3 inches vegetable oil in a medium pot over medium-low heat until a deep-fry thermometer registers 375 degrees F. Meanwhile, toss the cabbage, cilantro, lime juice, honey and mayonnaise in a bowl. Season the slaw with salt.\nWarm the tortillas in a skillet over medium-low heat or wrap in a damp cloth and microwave 25 seconds. Wrap in a towel to keep warm.\nMix the flour, chili powder, and salt and pepper to taste in a shallow bowl. Dredge the fish in the flour mixture, then fry in batches until golden and just cooked through, 2 to 3 minutes. Transfer with a slotted spoon to a paper-towel-lined plate to drain. Season with salt.\nHalve, pit and slice the avocado. Fill the tortillas with the fish, avocado, slaw and salsa. Serve with lime wedges.",
+		"categories": "Animals",
+		# "time": 20,
+		# "serves": 4,
+		"image": "dog_jog.jpg",
+		"user": "Admin",
+		"url": "https://www.dogjog.co.uk/glasgow/",
+		},
+		{
+			"name": "TRNSMT",
+			"description": "TRNSMT is Scotland's newest, most exciting festival. Returning in 2019 with a cracking line-up including George Ezra, Stormzy and Years & Years, this year's festival is not to be missed!",
+			# "ingredients": "450g (1lb) skinless fish fillets (salmon, haddock, etc) cut into chunks, 4 spring onions finely sliced, 1 red chilli, deseeded and finely chopped, 2 tbsp Thai Taste Red Curry Paste, 2 tbsp fresh coriander leaves, 1 tbsp Thai Taste Palm Sugar, 1 tsp Thai Taste Fish Sauce, 1 tbsp fresh lime juice, 50g (2oz) fine green beans, finely sliced, 1 tbsp Thai Taste Rice Bran Oil, for frying",
+			# "method": "1. Place the fish chunks, spring onions, chilli, curry paste, coriander, palm sugar, fish sauce, lime juice and a pinch of salt in a food processor and blend until finely minced. 2. Transfer to a bowl and stir in the sliced green beans. 3. Divide the mixture into 16 pieces, roll each one into a ball and then flatten into discs. 4. Transfer the fish cakes to a plate, cover with cling film and place in the fridge for 30 minutes to 1 hour to firm up. 5. Heat the oil in a large frying pan and when very hot fry the fish cakes for about 1-2 minute each side, until golden brown and cooked through. Lift out and drain on kitchen paper, then serve with a selection of dipping sauces and a wedge of lime. Garnish with spring onions.",
+			"categories": "Music",
+			# "time": 40,
+			# "serves": 4,
+			"image": "trnsmt.jpg",
+			"user": "Admin",
+			"url": "https://trnsmtfest.com/",
+
+		},
+		{
+			"name": "Premier League of Darts",
+			"description": "The Premier League of Darts is well known for its lively atmosphere. For your chance to experience it in Aberdeen, click the link below.",
+			# "ingredients": "1 pound tiny whole fish, such as blue anchovies, 1 tablespoon salt (finely ground), 1 cup flour (all-purpose), 1 to 2 cups oil for frying, 4 to 8 lemon wedges",
+			# "method": "Pick through your fish to look for any that are not pristine. You are looking for ones where the bellies are torn open. This is from enzymes within the fish breaking it down. Toss these and use only those that look nice, smell a bit like cucumbers (not like nasty fish) and that have clear eyes. Mix the salt and flour well. Pour the oil into a cast-iron frying pan or other suitable pan and heat it to 350 F over medium heat. Dust the fish in the seasoned flour and then shake off the excess. Fry in batches, stirring them so they don't stick together, for 2 to 3 minutes. Drain on a fine-meshed rack or paper towels. If you are making a lot of them, heat the oven to warm and place the fish in the oven until you are ready to serve since it is important that you serve whitebait toasty hot.",
+			"categories": "Sport",
+			# "time": 15,
+			# "serves": 4,
+			"image": "darts.jpg",
+			"user": "Admin",
+			"url": "https://www.pdc.tv/tournament/unibet-premier-league"
+		},
+
+		{
+			"name": "GlasGLOW",
+			"description": "A light show like no other! Set against the beautiful backdrop of Glasgow's Botanic Gardens, GlasGLOW will awaken your senses and spark your imagination. To find out more, check out the link below.",
+			# "ingredients": "250g puy lentils, 2 shallots, 4 tbsp olive oil, 140g shiitake mushrooms, 250g pack cherry or plum tomatoes, 2 tbsp capers, 150ml white wine, 4 x brill (or any other white fish like cod) fillets, skinned - about 140-175g/5-6oz each, 1 small lemon, 1 small bunch of flat-leaf parsley, 140g baby spinach",
+			# "method": "Heat oven to 200C/fan oven 180C/gas mark 6. Tip the lentils into a pan, and cover with cold water. Bring to the boil and cook for 15-20 mins until they are tender. Drain and keep to one side. Fry the shallots in half the oil in a shallow roasting tray on top of the hob, until softened. Increase the heat and add the mushrooms. Cook for a couple of minutes, until they are colouring around the edges. Remove the tray from the heat, then stir in the cooked lentils, halved tomatoes, capers and wine. Sit the fish on the lentils then top with a couple of slices of lemon and drizzle over the remaining oil. Season everything with flaked sea salt and freshly ground black pepper. Roast for 15 mins – until the fish is cooked through and beginning to go golden on top. Gently lift fish from the tray. Stir the parsley and spinach into lentils, until the spinach starts to wilt. Spoon onto 4 plates, sit the fish on top and serve.",
+			"categories": "Outdoors",
+			# "time": 50,
+			# "serves": 4,
+			"image": "glasglow.jpg",
+			"user": "Admin",
+			"url": "https://www.itison.com/glasglow",
+
+		},
+			{
+			"name": "Speyside Way",
+			"description": "This 107 km route in the Scottish Highlands offers some of the most breathtaking scenery the country has to offer. Follow the river Spey from Aviemore to Buckie on this beautiful trail.",
+			# "ingredients": "250g puy lentils, 2 shallots, 4 tbsp olive oil, 140g shiitake mushrooms, 250g pack cherry or plum tomatoes, 2 tbsp capers, 150ml white wine, 4 x brill (or any other white fish like cod) fillets, skinned - about 140-175g/5-6oz each, 1 small lemon, 1 small bunch of flat-leaf parsley, 140g baby spinach",
+			# "method": "Heat oven to 200C/fan oven 180C/gas mark 6. Tip the lentils into a pan, and cover with cold water. Bring to the boil and cook for 15-20 mins until they are tender. Drain and keep to one side. Fry the shallots in half the oil in a shallow roasting tray on top of the hob, until softened. Increase the heat and add the mushrooms. Cook for a couple of minutes, until they are colouring around the edges. Remove the tray from the heat, then stir in the cooked lentils, halved tomatoes, capers and wine. Sit the fish on the lentils then top with a couple of slices of lemon and drizzle over the remaining oil. Season everything with flaked sea salt and freshly ground black pepper. Roast for 15 mins – until the fish is cooked through and beginning to go golden on top. Gently lift fish from the tray. Stir the parsley and spinach into lentils, until the spinach starts to wilt. Spoon onto 4 plates, sit the fish on top and serve.",
+			"categories": "Family",
+			# "time": 50,
+			# "serves": 4,
+			"image": "SpeysideWay.jpg",
+			"user": "Admin",
+			"url": "https://cairngorms.co.uk/", 
+
+		}
+	]
+
 	cats = {"Music": {"events": music_pages},
 	"Animals": {"events": animal_pages},
 	'Nightlife': {"events": nightlife_pages},
@@ -370,6 +482,14 @@ def populate():
 		a = add_ad(item["advertText"], item["email"])
 		print(format(str(a)))
 
+	for item in categories:
+		f = add_categories(item["name"],item["image"])
+		print(format(str(f)))
+
+
+	for item in events:
+		r = add_events(item["name"], item["description"], get_categories(item["categories"]), item["image"], item["user"], item["url"])
+		print(format(str(r)))
 
 def add_event(cat, title, url):
 	e = Event.objects.get_or_create(category=cat, title=title)[0]
@@ -385,6 +505,20 @@ def add_cat(name):
 def add_ad(advertText, email):
 	a = Advert.objects.get_or_create(advertText=advertText, email=email)
 	return a
+
+
+def add_categories(name, image):
+	f = Categories.objects.get_or_create(name = name, image = image)
+	return f
+
+def get_categories(name):
+	categories = Categories.objects.get(name = name)
+	return categories
+
+
+def add_events(name, description, categories, image, user, url):
+	r = Events.objects.get_or_create(name = name, description = description, categories = categories, image = image, user=user, url=url)
+	return r
 
 
 if __name__ == '__main__':

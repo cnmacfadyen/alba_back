@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from whiskyouaway.models import Category, Event, UserProfile, Review, Advert
-from whiskyouaway.forms import UserForm, UserProfileForm, Review
+from whiskyouaway.models import Category, Event, UserProfile, Review, Advert, Categories, Events
+from whiskyouaway.forms import UserForm, UserProfileForm, Review, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
@@ -32,6 +32,23 @@ def adverts(request):
 
 def interests_map(request):
 	return render(request, 'whiskyouaway/interests_map.html', {})
+
+def events(request):
+	#Get all recipes and fish in alphabetical order
+	events_list = Events.objects.order_by('name')
+
+	category_list = Categories.objects.order_by('name')
+	context_dict = {'eventsList': events_list,
+					'categoryList': category_list}
+
+	response = render(request, 'whiskyouaway/events.html', context=context_dict)
+
+	return response
+
+def show_events(request, events_name_slug, *args, **kwargs):
+	context_dict= {}
+
+	return render(request, 'whiskyouaway/event.html', context_dict)
 
 #def register(request):
 #	return render(request, 'whiskyouaway/register.html', {})

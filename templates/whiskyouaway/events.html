@@ -1,0 +1,82 @@
+{% extends 'whiskyouaway/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Events
+{% endblock %}
+
+{% block body_block %}
+
+<div class="header">
+		<center><img src="{% static "images/logo.jpg" %}" alt="Whisk You Away logo" /></center>
+	</div>
+<div class="row">
+    <div class="col-lg-12" style="padding: 15px;"></div>
+</div>
+<div class="row">
+    <div class="col-lg-2" style="padding: 15px;"></div>
+
+    <div class="col-lg-8" style="padding: 15px;">
+
+        <div class="row">
+            <div class="col-lg-12" style="padding: 15px;"></div>
+            <h1>Browse Events</h1><br>
+        </div>
+
+        <div class="containter">
+            <div class="row">
+                <div class="col-lg-4" style="padding: 15px;">
+
+                    <h3>Browse By Category:</h3><br>
+
+                    <select id="dropDownMenu" class="btn dropdown-toggle" type="button"
+                            onchange="myFunction(this.value)">
+                        {% for Categories in categoryList %}
+                        <center>
+                            <option value="{{ Categories.name }}">{{ Categories.name }}</option>
+                        </center>
+                        {% endfor %}
+                    </select>
+                    <br>
+
+                </div>
+
+                <div class="col-lg-8" style="padding: 15px;">
+                    <div>
+                        {% for Events in eventsList %}
+                        <div class="containter event {{ Events.categories }}">
+                            <div class="row">
+                                <div class="col-lg-5" style="padding: 15px;">
+                                    <img class="fish-image" height="100" width="180" src="{{ MEDIA_URL }}/{{ Events.image }}"
+                                         alt="Picture of {{ Events.name}}"/></div>
+                                <div class="col-lg-7" style="padding: 15px;">
+                                    <a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
+                                    <p><b>Category:</b> <i> {{ Events.categories }}</i></p>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        {% endfor %}
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    function myFunction(value) {
+
+        var categorySelected = value;
+        categorySelected = "." + categorySelected;
+        $(".event").hide();
+        $(categorySelected).show();
+
+    }
+</script>
+
+
+{% endblock %}

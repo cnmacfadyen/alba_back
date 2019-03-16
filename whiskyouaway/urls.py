@@ -21,6 +21,12 @@ urlpatterns = [
 	url(r'^profile/$', views.profile, name='profile'),
 	url(r'^meet_up/$', views.meet_up, name='meet_up'),
 	url(r'^view_attractions/$', views.view_attractions, name='view_attractions'),
+	url(r'^events/$', views.events, name='events'),
+
+	# uses slug to get individual pages for recipes
+	url(r'^events/(?P<events_name_slug>[\w\-]+)/$',
+		views.show_events,
+		name='show_events'),
 	# animal urls
 	url(r'^categories/animals/dog_jog/$', views.dog_jog, name='dog_jog'),
 	url(r'^categories/animals/dog_lover/$', views.dog_lover, name='dog_lover'),
