@@ -35,7 +35,6 @@ def interests_map(request):
 	return render(request, 'whiskyouaway/interests_map.html', {})
 
 def events(request):
-	#Get all recipes and fish in alphabetical order
 	events_list = Events.objects.order_by('name')
 
 	category_list = Categories.objects.order_by('name')
@@ -47,9 +46,17 @@ def events(request):
 	return response
 
 def show_events(request, events_name_slug, *args, **kwargs):
-	context_dict= {}
+	# context_dict= {}
 
-	return render(request, 'whiskyouaway/event.html', context_dict)
+	# return render(request, 'whiskyouaway/event.html', context_dict)
+
+	try:
+		event = Events.objects.get(slug=events_name_slug)
+	except Events.DoesNotExist:
+		return redirect('index')
+
+	return render(request, 'whiskyouaway/event.html', {'event': event})
+
 
 @login_required 
 def register_profile(request): 
