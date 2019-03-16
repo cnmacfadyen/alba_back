@@ -16,9 +16,17 @@
 	<br/>
 	<h2>Current Adverts</h2>
 			{% for Advert in advertList %}
-			{{ Advert.advertText }}
-			<br/>
-			<a href="mailto:{{ Advert.email }}?subject=Whisk You Away Meet Up">{{ Advert.email }}</a>
+			<div class = "w3-card-4">
+			<header class="w3-container w3-aqua">
+				<p></p>
+			</header>
+			<div class="w3-container">
+			<p>{{ Advert.advertText }}</p>
+			</div>
+			<footer class = "w3-container w3-aqua">
+			<h5><a href="mailto:{{ Advert.email }}?subject=Whisk You Away Meet Up">{{ Advert.email }}</a></h5>
+			</footer>
+			</div>
 			<br/>
 			<br/>
 			{% endfor %} 
