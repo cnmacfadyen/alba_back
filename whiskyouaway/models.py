@@ -2,6 +2,7 @@ from django.db import models
 from django import forms
 from django.template.defaultfilters  import slugify
 from django.contrib.auth.models import User
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Categories(models.Model):
@@ -105,6 +106,22 @@ class ContactUs(models.Model):
 	firstname = models.CharField(max_length=50)
 	surname = models.CharField(max_length=50)
 	question = models.CharField(max_length=200)
+
+class UserCategories(models.Model):
+	CATEGORY_CHOICES = (
+		('Music', 'Music'),
+		('Animals', "Animals"),
+		('Nightlife', 'Nightlife'),
+		('Sport', 'Sport'),
+		('Outdoors', 'Outdoors'),
+		('History', 'History'),
+		('Family', 'Family'),
+		('Food and Drink', 'Food and Drink')
+		)
+	title = MultiSelectField(choices=CATEGORY_CHOICES)
+
+
+
 
 
 

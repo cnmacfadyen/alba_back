@@ -1,5 +1,5 @@
 from django.contrib import admin
-from whiskyouaway.models import Category, Event, UserProfile, Categories, Events, Review, Advert
+from whiskyouaway.models import Category, Event, UserProfile, Categories, Events, Review, Advert, UserCategories
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -22,3 +22,4 @@ admin.site.register(Categories)
 admin.site.register(Events)
 admin.site.register(Review)
 admin.site.register(Advert, AdvertAdmin)
+admin.site.register(UserCategories)
