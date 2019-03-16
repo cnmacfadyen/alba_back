@@ -8,7 +8,7 @@
 {% block body_block %}
 
 <div class="header">
-    <center><img src="{% static 'images/logo.jpg' %}" alt="whiskyouaway" /></center>
+    <center><img src="{% static 'images/logo2.jpg' %}" alt="whiskyouaway"/></center>
 </div>
 <div class="row">
     <div class="col-lg-12" style="padding: 15px;"></div>
@@ -21,30 +21,25 @@
 
 <div class="row">
     <div class="col-lg-12" style="padding: 15px;"></div>
-    <h1>{{ event.name }} {% if reviews %} {% for i in scoreRange %} &#9734; {% endfor %} {% endif %}</h1>
+   <h1>{{ event.name }} {% if reviews %} {% for i in scoreRange %} &#9734; {% endfor %} {% endif %}</h1>
 </div>
 
 <div class="containter">
     <div class="row">
         <div class="col-lg-5" style="padding: 15px;">
-                <center>
-            <img class="events-image" src="{{ MEDIA_URL }}/{{ event.image }}"
+                <img class="events-image" src="{{ MEDIA_URL }}/{{ event.image }}"
                  alt="Picture of {{ event.name }}" height="300" width="500"/>
-                
-
-
         </div>
-    </center>
-
     </div>
 </div>
 <div class="col-lg-7" style="padding: 15px;">
         <div class="containter event {{ event.name }}">
-            <p>{{ event.description }}</p><br>
+            <center> 
+            <p>{{ event.description }}</p>
            
-            <p><b>Category:</b> <i> {{ event.categories }}</i></p><br><br>
-<br / >
+            <p><b>Category:</b> <i> {{ event.categories }}</i></p>
 <a href="{{ event.url }}">Click here for more information </a>
+            </center> 
         </div>
     </div>
         <br><br>
@@ -75,7 +70,7 @@
                 <center>
                     <h1>Leave a Review...</h1>
 
-                    <form id="review_form" method="post" action="/whiskyouaway/events/{{ events.slug }}/">
+                    <form id="review_form" method="post" action="/whiskyouaway/events/{{ event.slug }}/">
                         {% csrf_token %}
                         {% for hidden in form.hidden_fields %}
                         {{ hidden }}
