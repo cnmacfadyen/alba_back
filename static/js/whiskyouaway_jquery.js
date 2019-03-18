@@ -5,3 +5,4 @@ function clearContent(element) {
 function logged() {
 	alert("Your issue has been logged.");
  }
+

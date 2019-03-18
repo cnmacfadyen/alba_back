@@ -6,7 +6,7 @@ Events
 {% endblock %}
 
 {% block body_block %}
-
+<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
 <div class="header">
 		<center><img src="{% static "images/logo2.jpg" %}" alt="Whisk You Away logo"/></center>
 	</div>
@@ -30,7 +30,7 @@ Events
                     <h3>Browse By Category:</h3><br>
 
                     <select id="dropDownMenu" class="btn dropdown-toggle" type="button"
-                            onchange="myFunction(this.value)">
+                            onchange="selectCategory(this.value)">
                         {% for Categories in categoryList %}
                         <center>
                             <option value="{{ Categories.name }}">{{ Categories.name }}</option>
@@ -64,19 +64,4 @@ Events
         </div>
     </div>
 </div>
-
-<script>
-
-
-    function myFunction(value) {
-
-        var categorySelected = value;
-        categorySelected = "." + categorySelected;
-        $(".event").hide();
-        $(categorySelected).show();
-
-    }
-</script>
-
-
 {% endblock %}
