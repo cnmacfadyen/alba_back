@@ -71,8 +71,8 @@
                 {% if user.is_authenticated %}
                 <center>
                     <h1>Leave a Review...</h1>
-
-                    <form id="review_form" method="post" action="/whiskyouaway/events/{{ event.slug }}/">
+                    <a href="review">Click here</a>
+                    <!-- <form id="review_form" method="post" action="/whiskyouaway/events/{{ event.slug }}/">
                         {% csrf_token %}
                         {% for hidden in form.hidden_fields %}
                         {{ hidden }}
@@ -85,7 +85,7 @@
                         {% endfor %}
 
                         <input type="submit" name="submit" value="Post Comment" class="btn"/><br><br>
-                    </form>
+                    </form> -->
 
                     {% else %}
                     {% endif %}

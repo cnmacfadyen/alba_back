@@ -116,7 +116,7 @@ class UserCategories(models.Model):
 		('Outdoors', 'Outdoors'),
 		('History', 'History'),
 		('Family', 'Family'),
-		('Food and Drink', 'Food and Drink')
+		('Food', 'Food')
 		)
 	title = MultiSelectField(choices=CATEGORY_CHOICES)
 

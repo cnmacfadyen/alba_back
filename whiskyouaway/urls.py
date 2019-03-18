@@ -10,7 +10,7 @@ urlpatterns = [
 	url(r'^about/$', views.about, name='about'),
 	url(r'^categories/$', views.categories, name='categories'),
 	url(r'^categories/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
-	url(r'^categories/(?P<category_name_slug>[\w\-]+)/reviews/$', views.reviews, name='reviews'),
+	url(r'^events/(?P<events_name_slug>[\w\-]+)/review/$', views.reviews, name='reviews'),
 	url(r'^interests_map/', views.interests_map, name='interests_map'),
 	url(r'^register_profile/$', views.register_profile, name='register_profile'),
 	url(r'^profile/(?P<username>[\w\-]+)/$', views.profile, name='profile'),
@@ -22,6 +22,7 @@ urlpatterns = [
 	url(r'^meet_up/$', views.meet_up, name='meet_up'),
 	url(r'^view_attractions/$', views.view_attractions, name='view_attractions'),
 	url(r'^events/$', views.events, name='events'),
+	# url(r'^review/$', views.reviews, name='reviews'),
 
 	# uses slug to get individual pages for events
 	url(r'^events/(?P<events_name_slug>[\w\-]+)/$',
