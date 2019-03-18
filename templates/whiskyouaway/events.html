@@ -29,6 +29,12 @@ Events
 
                     <h3>Browse By Category:</h3><br>
 
+                    <br/>
+
+                    <a href="{% url 'auth_login' %}">Login</a> or <a href="{% url 'registration_register' %}">Register</a> to browse by category
+
+                    {% if user.is_authenticated %}
+
                     <select id="dropDownMenu" class="btn dropdown-toggle" type="button"
                             onchange="selectCategory(this.value)">
                         {% for Categories in categoryList %}
@@ -38,6 +44,8 @@ Events
                         {% endfor %}
                     </select>
                     <br>
+
+                    {% endif %}
 
                 </div>
 
