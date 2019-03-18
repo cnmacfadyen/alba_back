@@ -12,7 +12,7 @@ class AdvertAdmin(admin.ModelAdmin):
 	list_display = ('advertText', 'email')
 
 # class UserProfile(admin.ModelAdmin):
-# 	list_display=('username')
+# 	list_display=('username', 'website')
 
 # Register your models here.
 admin.site.register(Category, CategoryAdmin)

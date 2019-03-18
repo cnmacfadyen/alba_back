@@ -21,6 +21,7 @@ class Events(models.Model):
 		return self.name
 	
 	name = models.CharField(max_length=128, null=True)
+	likes = models.IntegerField(default=0)
 	description = models.CharField(max_length=9999, null=True)
 	categories = models.ForeignKey(Categories)
 	avgRating = models.FloatField(null=True)

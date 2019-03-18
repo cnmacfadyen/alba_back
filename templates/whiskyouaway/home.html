@@ -7,15 +7,14 @@
 
 {% block body_block %}
 <div class="jumbotron">
-		<center><img src="{% static 'images/logo2.jpg' %}" alt="whiskyouaway"/></center>
-
+		<center><img src="{% static 'images/logo2.jpg' %}" alt="whiskyouaway"/>
 	<h1 class="display-3">Welcome!</h1>
-	<h1 class="display-3">Fàilte!</h1>
-	<h1 class="display-3"><u>Trending Events</u></h1>
+	<h1 class="display-3">Fàilte!</h1></center>
 </div>
 
 <div class="col-lg-8" style="padding: 15px;">
 		<div>
+			<h1 class="display-3"><u>Trending Events</u></h1>
 			{% for Events in eventsList %}
 			<div class="containter event {{ Events.categories }}">
 				<div class="row">
@@ -25,6 +24,7 @@
 					<div class="col-lg-7" style="padding: 15px;">
 						<a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
 						<p><b>Category:</b> <i> {{ Events.categories }}</i></p>
+						<p><b>Likes:</b> <i> {{ Events.likes }}</i></p>
 					</div>
 				</div>
 				<hr>
