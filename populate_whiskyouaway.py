@@ -347,7 +347,7 @@ def populate():
 	]
 
 	categories = [
-	{"name": "Animals",
+		{"name": "Animals",
 		
 		 "image": "static/animals/edinburgh_zoo.jpg",
 		
