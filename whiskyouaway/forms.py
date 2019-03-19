@@ -58,10 +58,7 @@ class ContactForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
-# class ContactUs(forms.ModelForm):
-# 	class meta:
-# 		model = ContactUs
-# 		fields = ('firstname', 'surname', 'email', 'issue', 'question')
+
 
 
 
