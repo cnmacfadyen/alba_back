@@ -94,6 +94,9 @@ class Review(models.Model):
 	writtenReview = models.CharField(max_length=200)
 	username = models.CharField(max_length=50)
 	rating = models.IntegerField()
+	# returns comment
+	def __str__(self):
+		return self.comment
 
 class Advert(models.Model):
 	# category = models.ForeignKey(Category)
@@ -108,6 +111,7 @@ class ContactUs(models.Model):
 	surname = models.CharField(max_length=50)
 	question = models.CharField(max_length=200)
 
+		
 class UserCategories(models.Model):
 	CATEGORY_CHOICES = (
 		('Music', 'Music'),

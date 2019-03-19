@@ -157,3 +157,10 @@ ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/whiskyouaway/'
 LOGIN_URL= '/accounts/login/'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'whiskyouaway11@gmail.com'
+EMAIL_HOST_PASSWORD = 'Please1!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

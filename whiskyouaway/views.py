@@ -1,20 +1,39 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from whiskyouaway.models import Category, Event, UserProfile, Review, Advert, Categories, Events
-from whiskyouaway.forms import UserForm, UserProfileForm, Review, CommentForm
+from whiskyouaway.forms import UserForm, UserProfileForm, Review, CommentForm, ContactForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from datetime import datetime
-
+from django.core.mail import send_mail
+from .forms import ContactForm
 
 # Create your views here.
+def contact_us(request):
+	if request.method == 'GET':
+		form = ContactForm()
+	else:
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			
+			subject = form.cleaned_data['subject']
+			from_email = form.cleaned_data['from_email']
+			message = form.cleaned_data['message']
+
+			send_mail(subject+" - " + from_email, message, from_email, ['whiskyouaway11@gmail.com'])
+			return redirect('index')
+	return render(request, "whiskyouaway/contact_us.html", {'form': form})
+
+def successView(request):
+	return HttpResponse('Success! Thank you for your message.')
 
 def index(request):
-	events_list = Events.objects.order_by('-likes')[:5]
-	# category_list = Categories.objects.order_by('name')
-	context_dict = {'eventsList': events_list}
+	events_list = Events.objects.order_by('name')[:5]
+	category_list = Categories.objects.order_by('name')
+	context_dict = {'eventsList': events_list,
+					'categoryList': category_list}
 
 	response = render(request, 'whiskyouaway/home.html', context=context_dict)
 
@@ -28,8 +47,8 @@ def about(request):
 def categories(request):
 	return render(request, 'whiskyouaway/categories.html', {})
 
-def contact_us(request):
-	return render(request, 'whiskyouaway/contact_us.html', {})
+# def contact_us(request):
+# 	return render(request, 'whiskyouaway/contact_us.html', {})
 
 def profile(request):
 	return render(request, 'whiskyouaway/profile.html', {})

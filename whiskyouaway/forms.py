@@ -17,7 +17,6 @@ class CommentForm(forms.ModelForm):
 	class Meta:
 		model = Review
 		fields = ('comment', 'rating')
-		exclude = ('user',)
 	
 class UserForm(forms.ModelForm):
 	password = forms.CharField(widget=forms.PasswordInput())
@@ -54,7 +53,15 @@ class AdvertForm(forms.ModelForm):
 		model = Advert
 		fields = ('event', 'advertText', 'email', 'user')
 
-class ContactUs(forms.ModelForm):
-	class meta:
-		model = ContactUs
-		fields = ('firstname', 'surname', 'email', 'issue', 'question')
+class ContactForm(forms.Form):
+    from_email = forms.EmailField(required=True)
+    subject = forms.CharField(required=True)
+    message = forms.CharField(widget=forms.Textarea, required=True)
+
+# class ContactUs(forms.ModelForm):
+# 	class meta:
+# 		model = ContactUs
+# 		fields = ('firstname', 'surname', 'email', 'issue', 'question')
+
+
+
