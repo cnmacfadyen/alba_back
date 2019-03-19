@@ -12,6 +12,9 @@ class EventAdmin(admin.ModelAdmin):
 class AdvertAdmin(admin.ModelAdmin):
 	list_display = ('advertText', 'email')
 
+class ReviewAdmin(admin.ModelAdmin):
+	list_display = ('review', 'event')
+
 # class UserProfile(admin.ModelAdmin):
 # 	list_display=('username', 'website')
 

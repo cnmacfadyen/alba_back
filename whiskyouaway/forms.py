@@ -39,6 +39,24 @@ class ContactForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
+class ReviewForm(forms.ModelForm):
+		# class meta:
+		# 	model = Review
+		# 	fields = ('username', 'review', 'ratings')
+		def __init__(self, *args, **kwargs):
+			self.user = kwargs.pop('user', None)
+			super(CommentForm, self).__init__(*args, **kwargs)
+	
+		# fields for a comment
+		comment = forms.CharField(max_length=2000, widget=forms.Textarea(attrs={'cols': 60, 'rows': 3}))
+		rating = forms.IntegerField(help_text="Rate this Event", min_value=1, max_value=5)
+	
+		# adds the inputs to the Review model
+		class Meta:
+			model = Review
+			fields = ('comment', 'rating')
+			exclude = ('user',)
+
 
 
 

@@ -45,7 +45,6 @@ class Review(models.Model):
 	user = models.CharField(max_length=128)
 	def __unicode__(self):
 		return self.name
-	rating = models.IntegerField(blank=True, default = 5)
 	comment = models.CharField(max_length=2000, null=True)
 	date_posted = models.DateTimeField(auto_now=True)
 

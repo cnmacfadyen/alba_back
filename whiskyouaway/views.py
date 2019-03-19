@@ -80,7 +80,6 @@ def show_events(request, events_name_slug, *args, **kwargs):
 	try:
 		events = Events.objects.get(slug=events_name_slug)
 		reviews = Review.objects.filter(events=events).order_by('-date_posted')
-		scoreAvg = Review.objects.filter(events=events).aggregate(Avg('rating'))['rating__avg']
 		form = CommentForm()
 
 		context_dict['reviews'] = reviews
