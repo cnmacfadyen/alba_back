@@ -1,3 +1,15 @@
+$(document).ready(function() {
+  // var form = $('#form');
+  // var submit = $('#submit');
+
+  $('#submit').on('click', function(e)) {
+    e.preventDefault();
+  })
+});
+
+
+
+
 $("#review_form").on('submit', function(event){
    event.preventDefault();
    console.log("form submitted");
@@ -12,7 +24,7 @@ $("#review_form").on('submit', function(event){
 
 function create_review(){
   $.ajax({
-     url: "",
+      url: "",
       type: "POST",
       dataType: "JSON",
       data: { "comment" : $('#id_comment').val();
