@@ -60,6 +60,10 @@ Events
                                 <div class="col-lg-7" style="padding: 15px;">
                                     <a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
                                     <p><b>Category:</b> <i> {{ Events.categories }}</i></p>
+                                    <div>
+                                        <strong>Likes:</strong>  <b id="like_count">{{ Events.likes }}</b>                                                                  
+                                    </div>
+                                    <button id="like" data-eventid="{{Events.id}}" class="btn btn-primary btn-sm" type="submit" onclick=" $('#like').click(function()">Like</button>
                                 </div>
                             </div>
                             <hr>
@@ -72,4 +76,13 @@ Events
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('#like').click(function(){ //add event handler to like button
+        var eventid; 
+        eventid = $(this).attr("data-eventid"); 
+        $.get('/whiskyouaway/like/', {event_id: eventid}, function(data){ 
+            $('#like_count').html(data); 
+                $('#likes').hide();
+        }); 
+    });</script>
 {% endblock %}

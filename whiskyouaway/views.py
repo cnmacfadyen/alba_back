@@ -116,6 +116,20 @@ def show_events(request, events_name_slug, *args, **kwargs):
 	return render(request, 'whiskyouaway/event.html', context_dict)
 
 
+def like_event(request):
+    event_id = None
+    if request.method == 'GET':
+        event_id = request.GET['event_id']
+    likes = 0
+    if event_id:
+        event = Events.objects.get(id=int(event_id))
+        if event:
+            likes = event.likes + 1
+            event.likes = likes
+            event.save()
+    return HttpResponse(likes)
+
+
 @login_required 
 def register_profile(request): 
 	form = UserProfileForm()
