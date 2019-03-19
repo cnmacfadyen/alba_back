@@ -2,6 +2,7 @@ from django.contrib import admin
 from whiskyouaway.models import Category, Event, UserProfile, Categories, Events, Review, Advert, UserCategories
 
 
+
 class CategoryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug':('name',)}
 

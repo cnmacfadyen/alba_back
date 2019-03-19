@@ -8,7 +8,11 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.core.mail import send_mail
-from .forms import ContactForm
+
+from datetime import datetime
+import json
+from django.db.models import Q
+from django.db.models import Avg
 
 # Create your views here.
 def contact_us(request):
@@ -72,16 +76,44 @@ def events(request):
 	return response
 
 def show_events(request, events_name_slug, *args, **kwargs):
-	# context_dict= {}
-
-	# return render(request, 'whiskyouaway/event.html', context_dict)
+	context_dict= {}
 
 	try:
-		event = Events.objects.get(slug=events_name_slug)
-	except Events.DoesNotExist:
-		return redirect('index')
+		events = Events.objects.get(slug=events_name_slug)
+		reviews = Review.objects.filter(events=events).order_by('-date_posted')
+		scoreAvg = Review.objects.filter(events=events).aggregate(Avg('rating'))['rating__avg']
+		if scoreAvg is None:
+			scoreRange = range(0,0)
+		else:
+			scoreRange = range(1, int(scoreAvg)+1)
+		form = CommentForm()
 
-	return render(request, 'whiskyouaway/event.html', {'event': event})
+		context_dict['reviews'] = reviews
+
+		if request.method == 'POST':
+
+			form.events = events
+			form = CommentForm(request.POST)
+
+			if form.is_valid():
+				a = form.save(commit=False)
+				a.events=Events.objects.get(slug=events_name_slug)
+		
+				a.save()
+
+				info_dict = {"comment": a.comment, "date": a.date_posted.strftime('%B %d, %Y, %I:%M %p')}
+				return HttpResponse(json.dumps(info_dict), content_type="application/json")
+
+			else:
+				print(form.errors)
+
+	except Events.DoesNotExist:
+
+		context_dict['events'] = None
+		context_dict['reviews'] = None
+
+	context_dict = {'form': form, 'events': events, 'reviews':reviews, 'scoreRange' : scoreRange}
+	return render(request, 'whiskyouaway/event.html', context_dict)
 
 
 @login_required 

@@ -4,6 +4,7 @@ from django.template.defaultfilters  import slugify
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
 
+
 # Create your models here.
 class Categories(models.Model):
 	name = models.CharField(max_length=128, unique=True) #name has to be unique
@@ -16,7 +17,7 @@ class Categories(models.Model):
 #The Recipe class takes in attributes that data relevant for its input
 class Events(models.Model):
 	
-	user = models.CharField(max_length=128, default = "Admin")
+	user = models.CharField(max_length=128)
 	def __unicode__(self):
 		return self.name
 	
@@ -41,7 +42,9 @@ class Events(models.Model):
 #The Review class takes in attributes that data relevant for its input and uses forieng keys to refer to database
 class Review(models.Model):
 	events = models.ForeignKey(Events)
-	user = models.ForeignKey(User)
+	user = models.CharField(max_length=128)
+	def __unicode__(self):
+		return self.name
 	rating = models.IntegerField(blank=True, default = 5)
 	comment = models.CharField(max_length=2000, null=True)
 	date_posted = models.DateTimeField(auto_now=True)
@@ -89,14 +92,6 @@ class UserProfileForm(forms.ModelForm):
 		model = UserProfile
 		exclude = ('user',)
 
-class Review(models.Model):
-	events = models.ForeignKey(Event)
-	writtenReview = models.CharField(max_length=200)
-	username = models.CharField(max_length=50)
-	rating = models.IntegerField()
-	# returns comment
-	def __str__(self):
-		return self.comment
 
 class Advert(models.Model):
 	# category = models.ForeignKey(Category)
