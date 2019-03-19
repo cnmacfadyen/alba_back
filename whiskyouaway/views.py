@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.core.mail import send_mail
-
 from datetime import datetime
 import json
 from django.db.models import Q
@@ -23,10 +22,10 @@ def contact_us(request):
 		if form.is_valid():
 			
 			subject = form.cleaned_data['subject']
-			from_email = form.cleaned_data['from_email']
+			email = form.cleaned_data['from_email']
 			message = form.cleaned_data['message']
 
-			send_mail(subject+" - " + from_email, message, from_email, ['whiskyouaway11@gmail.com'])
+			send_mail(subject+" - " + email, message, email, ['whiskyouaway11@gmail.com'])
 			return redirect('index')
 	return render(request, "whiskyouaway/contact_us.html", {'form': form})
 
@@ -82,10 +81,6 @@ def show_events(request, events_name_slug, *args, **kwargs):
 		events = Events.objects.get(slug=events_name_slug)
 		reviews = Review.objects.filter(events=events).order_by('-date_posted')
 		scoreAvg = Review.objects.filter(events=events).aggregate(Avg('rating'))['rating__avg']
-		if scoreAvg is None:
-			scoreRange = range(0,0)
-		else:
-			scoreRange = range(1, int(scoreAvg)+1)
 		form = CommentForm()
 
 		context_dict['reviews'] = reviews
@@ -112,7 +107,7 @@ def show_events(request, events_name_slug, *args, **kwargs):
 		context_dict['events'] = None
 		context_dict['reviews'] = None
 
-	context_dict = {'form': form, 'events': events, 'reviews':reviews, 'scoreRange' : scoreRange}
+	context_dict = {'form': form, 'events': events, 'reviews':reviews}
 	return render(request, 'whiskyouaway/event.html', context_dict)
 
 
@@ -174,26 +169,15 @@ def list_profiles(request):
 
 	return render(request, 'whiskyouaway/list_profiles.html',
 		{'userprofile_list': userprofile_list})
-	
-#def register(request):
-#	return render(request, 'whiskyouaway/register.html', {})
 
-#def user_login(request):
-#	return render(request, 'whiskyouaway/login.html', {})
 
 def restricted(request):
 	return render(request, 'whiskyouaway/restricted.html', {})
-
-#def user_logout(request):
-#	return render(request, 'whiskyouaway/logout.html', {})
 
 def meet_up(request):
 	advert_list = Advert.objects.order_by('email')
 	context_dict = {'advertList': advert_list}
 	return render(request, 'whiskyouaway/meet_up.html', context=context_dict)
-
-def view_attractions(request):
-	return render(request, 'whiskyouaway/view_attractions.html', {})
 
 @login_required
 def reviews(request, events_name_slug, *args, **kwargs):
@@ -219,51 +203,3 @@ def show_category(request, category_name_slug):
 		context_dict['category'] = None
 		context_dict['events'] = None
 	return render(request, 'whiskyouaway/categories.html', context_dict)
-
-#def register(request):
-#	registered = False
-#	if request.method == 'POST':
-#		user_form = UserForm(data=request.POST)
-#		profile_form = UserProfileForm(data=request.POST)
-#
-#		if user_form.is_valid() and profile_form.is_valid():
-#			user = user_form.save()
-#			user.set_password(user.password)
-#			user.save()
-#			profile = profile_form.save(commit=False)
-#			profile.user = user
-#
-#			if 'picture' in request.FILES:
-#				profile.picture = request.FILES['picture']
-#			profile.save()
-#			registered = True
-#		else:
-#			print(user_form.errors, profile_form.errors)
-#	else:
-#		user_form = UserForm()
-#		profile_form = UserProfileForm()
-#
-#	return render(request, 'whiskyouaway/register.html', {'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
-
-#def user_login(request):
-#	if request.method == 'POST':
-#		username = request.POST.get('username')
-#		password = request.POST.get('password')
-#		user = authenticate(username=username, password=password)
-#		if user:
-#			if user.is_active:
-#				login(request, user)
-#				return HttpResponseRedirect(reverse('index'))
-#			else:
-#				return HttpResponse("Your account is disabled.")
-#		else:
-#			print("Invalid login details: {0}, {1}".format(username, password))
-#			return HttpResponse("Invalid login details supplied.")
-
-#	else:
-#		return render(request, 'whiskyouaway/login.html', {})
-
-#@login_required
-#def user_logout(request):
-#	logout(request)
-#	return HttpResponseRedirect(reverse('index'))

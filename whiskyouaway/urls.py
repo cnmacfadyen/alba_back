@@ -21,10 +21,8 @@ urlpatterns = [
 	url(r'^contact_us/$', views.contact_us, name='contact_us'),
 	url(r'^profile/$', views.profile, name='profile'),
 	url(r'^meet_up/$', views.meet_up, name='meet_up'),
-	url(r'^view_attractions/$', views.view_attractions, name='view_attractions'),
 	url(r'^events/$', views.events, name='events'),
-	# url(r'^review/$', views.reviews, name='reviews'),
-
+	
 	# uses slug to get individual pages for events
 	url(r'^events/(?P<events_name_slug>[\w\-]+)/$',
 		views.show_events,

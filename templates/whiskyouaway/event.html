@@ -2,7 +2,6 @@
 {% load staticfiles %}
 
 {% block title_block %}
-{{ recipe.name }}
 {% endblock %}
 
 {% block body_block %}
@@ -23,7 +22,7 @@
 
 <div class="row">
     <div class="col-lg-12" style="padding: 15px;"></div>
-   <h1>{{ event.name }} {% if reviews %} {% for i in scoreRange %} &#9734; {% endfor %} {% endif %}</h1>
+   <h1>{{ event.name }} {% if reviews %} {% endif %}</h1>
 </div>
 
 <div class="containter">
@@ -61,8 +60,7 @@
                         {% for review in reviews %}
 
                         <p>{{ review.comment }}<br></p>
-                        <p style="color:#2e9fb5;"><b> - {{ review.user }}</b><br></p>
-                        <p>{{review.rating}}</p>
+                        <b> - {{ review.user }}</b><br></p>
                         <p style="color:#C7C6CB; font-size: medium"><i>{{ review.date_posted }}</i><br></p>
                         {% endfor %}
                         {% else %}
