@@ -23,10 +23,10 @@ def contact_us(request):
 		if form.is_valid():
 			
 			subject = form.cleaned_data['subject']
-			from_email = form.cleaned_data['from_email']
+			email = form.cleaned_data['from_email']
 			message = form.cleaned_data['message']
 
-			send_mail(subject+" - " + from_email, message, from_email, ['whiskyouaway11@gmail.com'])
+			send_mail(subject+" - " + email, message, email, ['whiskyouaway11@gmail.com'])
 			return redirect('index')
 	return render(request, "whiskyouaway/contact_us.html", {'form': form})
 
