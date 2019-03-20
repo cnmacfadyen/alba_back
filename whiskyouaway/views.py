@@ -33,7 +33,7 @@ def successView(request):
 	return HttpResponse('Success! Thank you for your message.')
 
 def index(request):
-	events_list = Events.objects.order_by('name')[:5]
+	events_list = Events.objects.order_by('-likes')[:5]
 	category_list = Categories.objects.order_by('name')
 	context_dict = {'eventsList': events_list,
 					'categoryList': category_list}
