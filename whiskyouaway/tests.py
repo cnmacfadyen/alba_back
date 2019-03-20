@@ -26,7 +26,7 @@ class AboutPageTests(TestCase):
         
     def test_about_contains_create_message(self):
         response = self.client.get(reverse('about'))
-        self.assertIn(b'Browse through our various categories to view information', response.content)
+        self.assertIn(b'Browse through our various events to view information', response.content)
         
         
     def test_about_contain_image(self):
