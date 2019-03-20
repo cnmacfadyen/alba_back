@@ -39,19 +39,13 @@ def index(request):
 					'categoryList': category_list}
 
 	response = render(request, 'whiskyouaway/home.html', context=context_dict)
-
 	return response
-	# response = render(request, 'whiskyouaway/home.html', {})
-	# return response
 
 def about(request):
 	return render(request, 'whiskyouaway/about.html', {})
 
 def categories(request):
 	return render(request, 'whiskyouaway/categories.html', {})
-
-# def contact_us(request):
-# 	return render(request, 'whiskyouaway/contact_us.html', {})
 
 def profile(request):
 	return render(request, 'whiskyouaway/profile.html', {})
@@ -66,16 +60,12 @@ def adverts(request):
 
 		# Have we been provided with a valid form?
 		if form.is_valid():
-			# save the new category to the database
+			# save the new advert to the database
 			ad = form.save(commit=True)
-			# now that the category is saved 
-			# we could give a confirmation message
-			# but since the most recent category added is on the index page
-			# then we can direct the user back to the index page
-			return index(request)
+			# redirect to the meet up page
+			return meet_up(request)
 		else:
-			# the supplied form contains errors -
-			# just print them to the terminal
+			#print errors to the terminal
 			print(form.errors)
 
 	# will handle the bad form, new form, or no form supplied cases
