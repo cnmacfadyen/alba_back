@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from whiskyouaway.models import Category, UserProfile, Review, ContactUs, Advert, Categories, Events
+from whiskyouaway.models import UserProfile, Review, ContactUs, Advert, Categories, Events
 
 class CommentForm(forms.ModelForm):
 

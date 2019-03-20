@@ -3,7 +3,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alba_back.settings')
 
 import django
 django.setup()
-from whiskyouaway.models import Category, Event, Advert, Categories, Events
+from whiskyouaway.models import Advert, Categories, Events
 
 def populate():
 
@@ -627,9 +627,6 @@ def populate():
 	}		
 	]
 
-	for c in Category.objects.all():
-		for e in Event.objects.filter(category=c):
-			print("- {0} - {1}".format(str(c), str(e)))
 
 	for item in adverts:
 		a = add_ad(item["advertText"], item["email"])

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from whiskyouaway.models import Category, Event, UserProfile, Review, Advert, Categories, Events
+from whiskyouaway.models import UserProfile, Review, Advert, Categories, Events
 from whiskyouaway.forms import UserForm, UserProfileForm, Review, CommentForm, ContactForm, AdvertForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
@@ -192,10 +192,6 @@ def list_profiles(request):
 	return render(request, 'whiskyouaway/list_profiles.html',
 		{'userprofile_list': userprofile_list})
 
-
-def restricted(request):
-	return render(request, 'whiskyouaway/restricted.html', {})
-
 def meet_up(request):
 	advert_list = Advert.objects.order_by('email')
 	context_dict = {'advertList': advert_list}
@@ -210,18 +206,3 @@ def reviews(request, events_name_slug, *args, **kwargs):
 
 	return render(request, 'whiskyouaway/review.html', {})
 
-def get_category_list(cat=None):
-	return {'cats': Category.objects.all(), 'act_cat': cat}
-
-def show_category(request, category_name_slug):	
-	context_dict = {}
-
-	try:
-		category = Category.objects.get(slug=category_name_slug)
-		events = Event.objects.filter(category=category)
-		context_dict['events'] = events
-		context_dict['category'] = category
-	except Category.DoesNotExist:
-		context_dict['category'] = None
-		context_dict['events'] = None
-	return render(request, 'whiskyouaway/categories.html', context_dict)
