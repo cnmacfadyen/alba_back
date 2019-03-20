@@ -31,7 +31,6 @@ spun {
 
 </style>
 <div class="header">
-    <center><img src="{% static 'images/logo2.jpg' %}" alt="whiskyouaway" /></center>
 </div>
 <div class="row">
     <div class="col-lg-4" style="padding: 15px;"></div>
@@ -100,7 +99,7 @@ spun {
                 <center>
                     <h1>Leave a Review</h1>
 
-                    <form id="review_form" method="post" action="/whiskyouaway/events/{{ events.slug }}/">
+                    <form id="review_form" method="post" action="{% url 'show_events' events.slug %}">
                         {% csrf_token %}
                         {% for hidden in form.hidden_fields %}
                         {{ hidden }}
