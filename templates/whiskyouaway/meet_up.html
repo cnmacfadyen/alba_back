@@ -35,13 +35,13 @@
 	<h2>Current Adverts</h2>
 			{% for Advert in advertList %}
 			<div class = "w3-card-4">
-			<header class="w3-container w3-aqua">
+			<header class="w3-container w3-indigo">
 				<p></p>
 			</header>
 			<div class="w3-container">
 			<p>{{ Advert.advertText }}</p>
 			</div>
-			<footer class = "w3-container w3-aqua">
+			<footer class = "w3-container w3-indigo">
 			<h5><a href="mailto:{{ Advert.email }}?subject=Whisk You Away Meet Up">{{ Advert.email }}</a></h5>
 			</footer>
 			</div>
