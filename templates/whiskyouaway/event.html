@@ -6,16 +6,40 @@
 
 {% block body_block %}
 
+<style>
+.events-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.containter-event {
+  height: 200px;
+  width: 600px;
+  line-height: 100px;
+  text-align: center;
+  
+}
+
+spun {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+
+</style>
 <div class="header">
     <center><img src="{% static 'images/logo2.jpg' %}" alt="whiskyouaway" /></center>
 </div>
 <div class="row">
-    <div class="col-lg-12" style="padding: 15px;"></div>
+    <div class="col-lg-4" style="padding: 15px;"></div>
 </div>
 <div class="row">
-    <div class="col-lg-2" style="padding: 15px;">
+    <div class="col-lg-4" style="padding: 15px;">
     </div>
-    <div class="col-lg-8" style="padding: 15px;">
+    <div class="col-lg-12" style="padding: 15px;">
 
 
 
@@ -25,26 +49,27 @@
    <h1>{{ event.name }} {% if reviews %} {% endif %}</h1>
 </div>
 
+
 <div class="containter">
     <div class="row">
-        <div class="col-lg-5" style="padding: 15px;">
+        <div class="events-image" style="padding: 25px;" align="middle">
+              
                 <img class="events-image" src="{{ MEDIA_URL }}/{{ events.image }}"
-                 alt="Picture of {{ events.name }}" height="300" width="500"/>
+                 alt="Picture of {{ events.name }}" height="300" width="600" />   
         </div>
-
-    </center>
+   
 
 </div>
-<div class="col-lg-7" style="padding: 15px;">
-        <div class="containter event {{ event.name }}">
-            <center> 
-            <p>{{ events.description }}</p>
+<div class="containter event {{ event.name }}" style="padding: 15px;" align="center">
+        <div class="containter-event" align="center">
            
-            <p><b>Category:</b> <i> {{ events.categories }}</i></p>
-
-<a href="{{ event.url }}">Click here for more information </a>
-            </center> 
-        </div>
+            <spun>{{ events.description }}</spun>
+           
+            <p><b>Category:</b><i> {{ events.categories }}</i></p>
+            </div>
+<a href="{{ events.url }}">Click here for more information </a>
+           
+        
     </div>
         <br><br>
 
@@ -52,7 +77,7 @@
             <div class="col-lg-12" style="padding: 15px;">
 
                 <center>
-
+                    <br><br>
                     <h1>Reviews</h1><br><br>
                     <div class="comment_section">
                         {% if reviews %}
