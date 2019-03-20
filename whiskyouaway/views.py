@@ -22,7 +22,7 @@ def contact_us(request):
 		if form.is_valid():
 			
 			subject = form.cleaned_data['subject']
-			email = form.cleaned_data['from_email']
+			email = form.cleaned_data['email']
 			message = form.cleaned_data['message']
 
 			send_mail(subject+" - " + email, message, email, ['whiskyouaway11@gmail.com'])
