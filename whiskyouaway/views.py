@@ -90,12 +90,13 @@ def show_events(request, events_name_slug, *args, **kwargs):
 			form = CommentForm(request.POST)
 
 			if form.is_valid():
-				a = form.save(commit=False)
-				a.events=Events.objects.get(slug=events_name_slug)
+				getInfo = form.save(commit=False)
+				getInfo.events=Events.objects.get(slug=events_name_slug)
+				getInfo.user = request.user
 		
-				a.save()
+				getInfo.save()
 
-				info_dict = {"comment": a.comment, "date": a.date_posted.strftime('%B %d, %Y, %I:%M %p')}
+				info_dict = {"comment": getInfo.comment, "user": request.user.username,"date": getInfo.date_posted.strftime('%B %d, %Y, %I:%M %p')}
 				return HttpResponse(json.dumps(info_dict), content_type="application/json")
 
 			else:
