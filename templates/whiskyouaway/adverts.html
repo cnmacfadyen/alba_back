@@ -1,15 +1,29 @@
 {% extends 'whiskyouaway/base.html' %}
-{% load staticfiles %} 
+{% load staticfiles %}
 
 {% block title_block %}
-    	Adverts
+    Post an Advert
 {% endblock %}
 
 {% block body_block %}
-<div>
-	<h1>Post an Advert</h1>
-
-	
-	
-</div>
+    <div>
+        <h1>Post an Advert</h1>
+        <form id="advert_form" method="post" action="{% url 'adverts' %}">
+            {% csrf_token %}
+            {% for hidden in form.hidden_fields %}
+                {{ hidden }}
+            {% endfor %}
+                
+            {% for field in form.visible_fields %}
+                {{ field.errors }}
+                {{ field.help_text }}
+				{{ field }}
+				
+				<br/>
+				<br/>
+			{% endfor %}
+			<br/>
+			<input type="submit" name="submit" value="Post Advert" />
+        </form>
+    </div>
 {% endblock %}

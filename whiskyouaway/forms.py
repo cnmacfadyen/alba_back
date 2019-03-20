@@ -30,9 +30,12 @@ class UserProfileForm(forms.ModelForm):
 		fields = ('picture','website')
 
 class AdvertForm(forms.ModelForm):
-	class meta:
+	email = forms.EmailField(help_text="Email:",required=True)
+	advertText = forms.CharField(help_text="Message:",widget=forms.Textarea, required=True)
+
+	class Meta:
 		model = Advert
-		fields = ('event', 'advertText', 'email', 'user')
+		fields = ('advertText', 'email')
 
 class ContactForm(forms.Form):
     email = forms.EmailField(required=True)
