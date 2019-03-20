@@ -4,7 +4,7 @@
 {% block title_block %} {{ selecteduser.username }} Profile{% endblock %}
 
 {% block body_block %}
-	<h1>{{ selecteduser.username }} Profile</h1>
+	<h1>{{ selecteduser.username }}'s Profile</h1>
 	<img src="{{ MEDIA_URL }}{{ userprofile.picture }}"
 		width="300"
 		height="300"
@@ -12,11 +12,11 @@
 
 	<br/>
 	<div>
-		{% if selecteduser.username == user.username %}
+		{% if selecteduser.username == user.username %} <!--display update button if user is on their own profile-->
 			<form method="post" action="." enctype="multipart/form-data">
 				{% csrf_token %}
 				{{ form.as_p }}
-				<input type="submit" value="Update" />
+				<input type="submit" value="Update"/>
 			</form>
 		{% else %}
 		<p><strong>Website:</strong><a href="{{userprofile.website}}">

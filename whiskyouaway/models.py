@@ -12,9 +12,7 @@ class Categories(models.Model):
 
 	def __str__(self):
 		return self.name
-
-
-#The Recipe class takes in attributes that data relevant for its input
+		
 class Events(models.Model):
 	
 	user = models.CharField(max_length=128)
@@ -30,7 +28,6 @@ class Events(models.Model):
 	image = models.ImageField(upload_to='events_images', blank=False)
 	url = models.URLField(max_length=128)
 
-	# saves slug as name and saves it as Recipe. only allows time and serves to be set to 1 if <0 is entered
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.name)
 		super(Events, self).save(*args, **kwargs)
@@ -39,7 +36,7 @@ class Events(models.Model):
 	def __str__(self):
 		return self.name
 
-#The Review class takes in attributes that data relevant for its input and uses forieng keys to refer to database
+
 class Review(models.Model):
 	events = models.ForeignKey(Events)
 	user = models.CharField(max_length=128)
@@ -80,6 +77,7 @@ class UserProfile(models.Model):
 	user = models.OneToOneField(User)
 	website = models.URLField(blank=True)
 	picture = models.ImageField(upload_to='profile_images', blank=True)
+
 	def __str__(self):
 		return self.user.username
 
@@ -93,10 +91,8 @@ class UserProfileForm(forms.ModelForm):
 
 
 class Advert(models.Model):
-	# category = models.ForeignKey(Category)
 	advertText = models.CharField(max_length=200)
 	email = models.CharField(max_length=200)
-	# user = models.OneToOneField(User)
 	def __str__(self):
 		return self.email
 
