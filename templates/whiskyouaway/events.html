@@ -61,9 +61,9 @@ Events
                                     <a href="{% url 'show_events' Events.slug %}"><h2>{{ Events.name }}</h2></a>
                                     <p><b>Category:</b> <i> {{ Events.categories }}</i></p>
                                     <div>
-                                        <strong>Likes:</strong>  <b id="like_count">{{ Events.likes }}</b>                                                                  
+                                        <strong>Likes:</strong>  <b id="{{Events.id}}.like_count">{{ Events.likes }}</b>                                                                  
                                     </div>
-                                    <button class="like" data-eventid="{{Events.id}}" type="submit" onclick=" $('.like').click(function()">Like</button>
+                                    <button class="like" data-eventid="{{Events.id}}" type="submit" onclick="location.reload(true);">Like</button>
                                 </div>
                             </div>
                             <hr>
