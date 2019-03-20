@@ -10,8 +10,6 @@ from datetime import datetime
 from django.core.mail import send_mail
 from datetime import datetime
 import json
-from django.db.models import Q
-from django.db.models import Avg
 
 # Create your views here.
 def contact_us(request):
