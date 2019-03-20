@@ -268,7 +268,7 @@ def populate():
 	"description":"A world-renowned event steeped in Scottish tradition, the Edinburgh Military Tattoo is an event not to be missed. Set against the beautiful backdrop of Edinburgh Castle experience this outdoor event like no other.",
 	"categories": "Outdoors",
 	"image":"tattoo.jpg",
-	"url": "www.edintattoo.co.uk"
+	"url": "https://www.edintattoo.co.uk"
 	},
 	{
 	"name": "GlasGLOW",
@@ -292,7 +292,7 @@ def populate():
 	"description":"For a modern interpritation of traditional a Celtic festival, head to the Beltane Fire Festival. There'll be fire, drumming and acrobatics galore!",
 	"categories": "Outdoors",
 	"image":"fire_festival.jpg",
-	"url": "www.beltane.org"
+	"url": "https://www.beltane.org"
 	},
 	{
 	"name": "Scotland’s Big Nature Festival",
@@ -300,7 +300,7 @@ def populate():
 	"description":"If you enjoy the occasional dabbling in time travel, why not check out Scotland's Big Nature Festival to learn more about nature in Scotland.",
 	"categories": "Outdoors",
 	"image":"nature_festival.jpg",
-	"url": "www.ruralprojects.co.uk"
+	"url": "https://www.rspb.org.uk/reserves-and-events/events-dates-and-inspiration/events/scotlands-big-nature-festival/"
 	},
 	{
 	"name": "Bard in the Botanics",
