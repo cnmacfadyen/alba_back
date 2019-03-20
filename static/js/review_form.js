@@ -1,13 +1,20 @@
-$(document).ready(function() {
-  // var form = $('#form');
-  // var submit = $('#submit');
+// We were having some issues with the CSRF cookies, but found this link to be very helpful
+// https://docs.djangoproject.com/en/2.1/ref/csrf/
 
-  $('#submit').on('click', function(e)) {
-    e.preventDefault();
-  })
+
+var csrf = getCookie('csrftoken')
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain){
+            xhr.setRequestHeader("X-CSRFToken", csrf)
+        }
+    }
 });
 
-
+function csrfSafeMethod(method){
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
 
 
 $("#review_form").on('submit', function(event){
@@ -20,6 +27,20 @@ $("#review_form").on('submit', function(event){
 });
 
 
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
 
 
 function create_review(){
@@ -27,7 +48,7 @@ function create_review(){
       url: "",
       type: "POST",
       dataType: "JSON",
-      data: { "comment" : $('#id_comment').val();
+      data: { "comment" : $('#id_comment').val()},
       success: function(json){
          $('#id_comment').val('');
          console.log(json);
