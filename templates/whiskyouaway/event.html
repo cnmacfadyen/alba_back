@@ -98,7 +98,7 @@ spun {
                 </center>
                 {% if user.is_authenticated %}
                 <center>
-                    <h1>Leave a Review...</h1>
+                    <h1>Leave a Review</h1>
 
                     <form id="review_form" method="post" action="/whiskyouaway/events/{{ events.slug }}/">
                         {% csrf_token %}
@@ -112,7 +112,7 @@ spun {
                         {{ field }}<br><br>
                         {% endfor %}
 
-                        <input type="submit" name="submit" value="Post Comment" class="btn"/><br><br>
+                        <input type="submit" name="submit" value="Post Review" class="btn"/><br><br>
                     </form>
 
                     {% else %}
