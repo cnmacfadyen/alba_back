@@ -6,7 +6,7 @@ Events
 {% endblock %}
 
 {% block body_block %}
-<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
+
 <div class="header">
 		<center><img src="{% static "images/logo2.jpg" %}" alt="Whisk You Away logo"/></center>
 	</div>
@@ -76,13 +76,6 @@ Events
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(".like").click(function(){ //add event handler to like button
-        var eventid; 
-        eventid = $(this).attr("data-eventid"); 
-        $.get('/whiskyouaway/like/', {event_id: eventid}, function(data){ 
-            $('#like_count').html(data); 
-                $('#likes').hide();
-        }); 
-    });</script>
+<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/likes.js' %}"></script>
 {% endblock %}
