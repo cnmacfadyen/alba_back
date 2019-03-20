@@ -5,79 +5,45 @@
 {% endblock %}
 
 {% block body_block %}
-
-<style>
-.events-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
-
-.containter-event {
-  height: 200px;
-  width: 600px;
-  line-height: 100px;
-  text-align: center;
-  
-}
-
-spun {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
-}
-
-
-</style>
+<link src="{% static 'css/events.css' %}" rel = "stylesheet" type = "text/css">
 <div class="header">
 </div>
 <div class="row">
-    <div class="col-lg-4" style="padding: 15px;"></div>
+    <div class="col-lg-4"></div>
 </div>
 <div class="row">
-    <div class="col-lg-4" style="padding: 15px;">
+    <div class="col-lg-4">
     </div>
-    <div class="col-lg-12" style="padding: 15px;">
-
-
-
+    <div class="col-lg-12">
 
 <div class="row">
-    <div class="col-lg-12" style="padding: 15px;"></div>
+    <div class="col-lg-12"></div>
    <h1>{{ event.name }} {% if reviews %} {% endif %}</h1>
 </div>
 
 
 <div class="containter">
-    <div class="row">
-        <div class="events-image" style="padding: 25px;" align="middle">
-              
+        <div class="events-image" align="middle">
                 <img class="events-image" src="{{ MEDIA_URL }}/{{ events.image }}"
-                 alt="Picture of {{ events.name }}" height="300" width="600" />   
-        </div>
-   
-
+                 alt="Picture of {{ events.name }}" height="300" width="600" /> 
+    </div>
 </div>
-<div class="containter event {{ event.name }}" style="padding: 15px;" align="center">
+<div class="containterevent{{ event.name }}" align="center">
         <div class="containter-event" align="center">
-           
-            <spun>{{ events.description }}</spun>
-           
+           <br /><br />
+            {{ events.description }}
+           <br /><br />
             <p><b>Category:</b><i> {{ events.categories }}</i></p>
             </div>
 <a href="{{ events.url }}">Click here for more information </a>
-           
-        
     </div>
-        <br><br>
+       
 
         <div class="row">
-            <div class="col-lg-12" style="padding: 15px;">
-
+            <div class="col-lg-12">
                 <center>
                     <br><br>
-                    <h1>Reviews</h1><br><br>
+                    <h1>Reviews</h1><br>
                     <div class="comment_section">
                         {% if reviews %}
 
@@ -85,7 +51,7 @@ spun {
 
                         <p>{{ review.comment }}<br></p>
                         <b> - {{ review.user }}</b><br></p>
-                        <p style="color:#C7C6CB; font-size: medium"><i>{{ review.date_posted }}</i><br></p>
+                        <p id="comment-font"><i>{{ review.date_posted }}</i><br></p>
                         {% endfor %}
                         {% else %}
                         <p id="No_comments">Nobody has reviewed this event yet.</p>

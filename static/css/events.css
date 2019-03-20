@@ -4,3 +4,49 @@
   display: flex;
 
 }
+
+.events-image {
+    display: block;
+    margin: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 25px;
+}
+
+.containter-event {
+  height: 300px;
+  width: 600px;
+  line-height: 100px;
+  text-align: center;
+  
+}
+
+.containter {
+	display: block;
+    margin: auto;
+    margin-right: auto;
+    width: 70%;
+    padding: 25px;
+}
+
+.spun {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.col-lg-4 {
+	padding: 15px;
+}
+
+.col-lg-12 {
+	padding: 15px;
+}
+
+
+#comment-font {
+	color:#C7C6CB; 
+	font-size: medium
+}
+
+
