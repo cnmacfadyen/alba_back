@@ -4,6 +4,7 @@ from django.contrib.staticfiles import finders
 
 # Create your tests here.
 
+# Will  add more later
 
 class GeneralTests(TestCase):
     def test_serving_static_files(self):

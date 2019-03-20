@@ -134,6 +134,7 @@ def like_event(request):
             event.save()
     return HttpResponse(likes)
 
+# Need to be logged in to see the views below
 
 @login_required 
 def register_profile(request): 
@@ -180,6 +181,7 @@ def list_profiles(request):
 	return render(request, 'whiskyouaway/list_profiles.html',
 		{'userprofile_list': userprofile_list})
 
+@login_required
 def meet_up(request):
 	advert_list = Advert.objects.order_by('email')
 	context_dict = {'advertList': advert_list}

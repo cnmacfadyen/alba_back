@@ -18,12 +18,11 @@ class Events(models.Model):
 	user = models.CharField(max_length=128)
 	def __unicode__(self):
 		return self.name
-	
+	# All of these fields will be needed when creating the population script
 	name = models.CharField(max_length=128, null=True)
 	likes = models.IntegerField(default=0)
 	description = models.CharField(max_length=9999, null=True)
 	categories = models.ForeignKey(Categories)
-	avgRating = models.FloatField(null=True)
 	slug = models.SlugField(null=True, blank=True)
 	image = models.ImageField(upload_to='events_images', blank=False)
 	url = models.URLField(max_length=128)
@@ -58,6 +57,7 @@ class UserProfile(models.Model):
 	def __str__(self):
 		return self.user.username
 
+# Set the fields to false so that it doesn't matter whether an image/website is uploaded or not
 class UserProfileForm(forms.ModelForm):
 	website = forms.URLField(required=False)
 	picture = forms.ImageField(required=False)
@@ -68,7 +68,7 @@ class UserProfileForm(forms.ModelForm):
 
 
 class Advert(models.Model):
-	advertText = models.CharField(max_length=200)
+	advertText = models.CharField(max_length=2000)
 	email = models.CharField(max_length=200)
 	def __str__(self):
 		return self.email
@@ -78,7 +78,7 @@ class ContactUs(models.Model):
 	surname = models.CharField(max_length=50)
 	question = models.CharField(max_length=200)
 
-		
+# Hoping to connect this up with user later 
 class UserCategories(models.Model):
 	CATEGORY_CHOICES = (
 		('Music', 'Music'),
